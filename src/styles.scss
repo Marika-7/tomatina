@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/app/shared/styles/base';
+@import 'src/app/shared/styles/fonts';
+@import 'src/app/shared/styles/variables';
+@import 'src/app/shared/styles/mixins';
+@import 'src/app/shared/styles/text';
+@import 'src/app/shared/styles/buttons';
+@import 'src/app/shared/styles/forms';
+
+html:not(.touch-screen)::-webkit-scrollbar,
+html:not(.touch-screen) *::-webkit-scrollbar {
+    width:5px;
+    height:5px;
+}
+html:not(.touch-screen)::-webkit-scrollbar-track,
+html:not(.touch-screen) *::-webkit-scrollbar-track {
+    background:#FFF;
+}
+html:not(.touch-screen)::-webkit-scrollbar-thumb,
+html:not(.touch-screen) *::-webkit-scrollbar-thumb {
+    background:#599921;
+}
+
+body {
+    font-family: 'Geometria', sans-serif;
+    color: $text-normal;
+    font-weight: 400;
+}
+
+:focus {
+    outline-color: $text-bold;
+}

@@ -1,0 +1,103 @@
+.btn-green {
+    padding: 8px 15px;
+    background-color: $main-color;
+    border: 2px solid $main-color;
+    border-radius: 6px;
+    color: $white;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    &:hover {
+        background-color: transparent;
+        color: $text-bold;
+    }
+}
+
+.btn-milk {
+    padding: 15px;
+    background-color: $milk;
+    border-radius: 6px;
+    color: $text-bold;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: .3s;
+    &:hover {
+        background-color: $main-color;
+        color: $white;
+    }
+}
+
+.btn-white {
+    padding: 10px;
+    background-color: $white;
+    color: $text-bold;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.btn-link {
+    color: $text-bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    @include screen-1280 {
+        font-size: 12px;
+    }
+    @include screen-480 {
+        font-size: 10px;
+    }
+    &:hover {
+        color: $main-color;
+    }
+}
+
+// .btn-icon {}
+
+.svg {
+    width: 47px;
+    height: 45px;
+    @include screen-768 {
+        width: 36px;
+        height: 35px;
+    }
+    @include screen-480 {
+        width: 29px;
+        height: 28px;
+    }
+    &__bg {
+        fill:#599921;
+        transition:all 0.3s;
+    }
+    &:hover &__bg {
+        fill: transparent;
+    }
+    &__img {
+        fill:#fff;
+        transition:all 0.3s;
+        stroke: #fff;
+    }
+    &:hover &__img {
+        fill:#599921;
+        stroke: #599921;
+    }
+}
+
+// <button class="btn-icon" type="button">
+//     <svg class="svg">
+//         <use class="svg__bg" href="sprite-icons.svg#bg"></use>
+//         <use class="svg__img" href="sprite-icons.svg#heart"></use>
+//         <use class="svg__img" href="sprite-icons.svg#mark"></use>
+//         <use class="svg__img" href="sprite-icons.svg#phone"></use>
+//         <use class="svg__img" href="sprite-icons.svg#clock"></use>
+//         <use class="svg__img" href="sprite-icons.svg#fb"></use>
+//     </svg>
+// </button>
+// <button class="btn-icon" type="button">
+//     <a href="#">
+//         <img src="insta-min.svg" class="svg" alt="">
+//     </a>
+// </button>

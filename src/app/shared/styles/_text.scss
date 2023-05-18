@@ -1,0 +1,67 @@
+.green {
+    color: $main-color;
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.red {
+    color: $red;
+}
+
+.bg-green {
+    background-color: $main-color2;
+    color: $white;
+}
+
+.underline {
+    color: $main-color2;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    @include screen-480 {
+        font-size: 14px;
+    }
+}
+
+.underline-invert {
+    @extend .underline;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+    .underline {
+        &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: $main-color2;
+            position: absolute;
+            bottom: -2px;
+            left: auto;
+            right: 0;
+            transition: all .3s;
+        }
+        &:hover::after {
+            width: 100%;
+            left: 0;
+            right: auto;
+        }
+    }
+
+    .underline-invert {
+        &::after {
+            width: 100%;
+            left: 0;
+        }
+        &:hover::after {
+            width: 0;
+            left: auto;
+            right: 0;
+        }
+    }
+}

@@ -1,13 +1,15 @@
 task
+    footer
+        blocks
+        social - icons
+    main
+        edit height
+
+later
     header
         add overlay cdk
-        ----------
         add navigation
         add on-click
-        focus for custom checkbox
-    footer
-    main
-
 
 questions
     eng
@@ -97,6 +99,7 @@ questions
     git push
 
     git commit -m "create header"
+    git commit -m "create footer"
 
 -------------------- command --------------------
 

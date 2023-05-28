@@ -70,7 +70,16 @@
     }
     &__bg {
         fill:#599921;
+        stroke: $main-color2;
         transition:all 0.3s;
+        &_fb {
+            fill: $fb;
+            stroke: $fb;
+        }
+        &_inst {
+            fill: $inst;
+            stroke: $inst;
+        }
     }
     &:hover &__bg {
         fill: transparent;
@@ -83,21 +92,11 @@
     &:hover &__img {
         fill:#599921;
         stroke: #599921;
+        &_fb {
+            fill: $fb;
+        }
+        &_inst {
+            fill: $inst;
+        }
     }
 }
-
-// <button class="btn-icon" type="button">
-//     <svg class="svg">
-//         <use class="svg__bg" href="sprite-icons.svg#bg"></use>
-//         <use class="svg__img" href="sprite-icons.svg#heart"></use>
-//         <use class="svg__img" href="sprite-icons.svg#mark"></use>
-//         <use class="svg__img" href="sprite-icons.svg#phone"></use>
-//         <use class="svg__img" href="sprite-icons.svg#clock"></use>
-//         <use class="svg__img" href="sprite-icons.svg#fb"></use>
-//     </svg>
-// </button>
-// <button class="btn-icon" type="button">
-//     <a href="#">
-//         <img src="insta-min.svg" class="svg" alt="">
-//     </a>
-// </button>

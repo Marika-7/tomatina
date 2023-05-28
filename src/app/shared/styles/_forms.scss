@@ -82,6 +82,9 @@
             left: 3px;
         }
     }
+    &:has(input:focus)::before {
+        outline: 2px solid $text-bold;
+    }
 }
 
 .checkbox {

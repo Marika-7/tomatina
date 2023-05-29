@@ -16,6 +16,7 @@
 }
 
 .underline {
+    padding: 2px;
     color: $main-color2;
     font-size: 16px;
     font-weight: 500;
@@ -41,7 +42,7 @@
             height: 2px;
             background-color: $main-color2;
             position: absolute;
-            bottom: -2px;
+            bottom: 0px;
             left: auto;
             right: 0;
             transition: all .3s;
@@ -62,6 +63,98 @@
             width: 0;
             left: auto;
             right: 0;
+        }
+    }
+}
+
+.h1 {
+    text-align: center;
+    color: $text-bold;
+    font-size: 42px;
+    @include screen-1280 {
+        font-size: 38px;
+    }
+    @include screen-768 {
+        font-size: 34px;
+    }
+    @include screen-480 {
+        font-size: 24px;
+    }
+}
+
+.h2 {
+    color: $text-bold;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.2em;
+    @include screen-1280 {
+        font-size: 40px;
+    }
+    @include screen-768 {
+        font-size: 38px;
+    }
+}
+
+.h3 {
+    color: $text-bold;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2em;
+    @include screen-1280 {
+        font-size: 38px;
+    }
+    @include screen-768 {
+        font-size: 34px;
+    }
+}
+
+.h4 {
+    color: $text-bold;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.2em;
+    @include screen-1280 {
+        font-size: 28px;
+    }
+    @include screen-768 {
+        font-size: 26px;
+    }
+}
+
+.p {
+    color: $text-normal;
+    font-size: 16px;
+    line-height: 28px;
+    @include screen-1280 {
+        font-size: 15px;
+    }
+}
+
+.ul {
+    &__li {
+        margin-top: 10px;
+        margin-left: 25px;
+        font-size: 16px;
+        line-height: 1.5rem;
+        position: relative;
+        // @include screen-480 {
+        //     font-size: 14px;
+        // }
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid $main-color;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: -24px;
+            @include screen-1280 {
+                width: 8px;
+                height: 8px;
+                top: 9px;
+            }
         }
     }
 }

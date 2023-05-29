@@ -20,6 +20,10 @@ html:not(.touch-screen) *::-webkit-scrollbar-thumb {
     background:#599921;
 }
 
+// html {
+//     --details-transition-time: 400ms;
+//   }
+
 body {
     font-family: 'Geometria', sans-serif;
     color: $text-normal;

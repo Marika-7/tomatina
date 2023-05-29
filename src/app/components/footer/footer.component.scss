@@ -52,6 +52,7 @@
     display: flex;
     justify-content: space-between;
     &__link {
+        padding: 2px;
         font-size: 14px;
         &:nth-child(1) {
             color: $text-bold;

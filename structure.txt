@@ -1,15 +1,13 @@
 task
-    footer
-        blocks
-        social - icons
-    main
-        edit height
+        
 
 later
     header
         add overlay cdk
         add navigation
         add on-click
+    home
+        details: display-none or cdk
 
 questions
     eng
@@ -100,6 +98,7 @@ questions
 
     git commit -m "create header"
     git commit -m "create footer"
+    git commit -m "create home"
 
 -------------------- command --------------------
 

@@ -37,3 +37,12 @@ button {
 textarea {
     resize: none;
 }
+
+summary {
+    cursor: pointer;
+}
+
+summary::marker {
+    content: '';
+    display: none;
+}

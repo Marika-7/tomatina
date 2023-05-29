@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  public detailsIsOpen = false;
+
+  toggleDetails(): void {
+    this.detailsIsOpen = !this.detailsIsOpen;
+  }
+
 }

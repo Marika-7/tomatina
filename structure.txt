@@ -16,36 +16,36 @@ questions
 
 -------------------- app --------------------
 
-    components/
-        header
-        footer
--        product-card
--        busket
--        auth-dialog
-    pages/
-        home
--        product
--        zbery-sam
--        favorite
-        about
-        delivery
--        contacts
-    admin/
--        admin-category
--        admin-product
--        admin-orders
-    user/
--        user-info
--        user-favorite
--        user-orders
+        components/
+            header
+            footer
+    -        product-card
+    -        busket
+    -        auth-dialog
+        pages/
+            home
+    -        product
+    -        zbery-sam
+    -        favorite
+            about
+            delivery
+    -        contacts
+        admin/
+    -        admin-category
+    -        admin-product
+    -        admin-orders
+        user/
+    -        user-info
+    -        user-favorite
+    -        user-orders
 
-    shared/
-        directives/
-        guards/
-        interfaces/
-        pipes/
-        services/
-        styles/
+        shared/
+            directives/
+            guards/
+            interfaces/
+            pipes/
+            services/
+            styles/
 
 -------------------- ng --------------------
 
@@ -102,6 +102,7 @@ questions
     git commit -m "create footer"
     git commit -m "create home"
     git commit -m "create delivery"
+    git commit -m "create about"
 
 -------------------- command --------------------
 

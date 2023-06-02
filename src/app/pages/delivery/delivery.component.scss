@@ -62,7 +62,7 @@
             fill: $red2;
         }
     }
-    &__h2 {
+    &__title2 {
         font-size: 26px;
         line-height: 1.2em;
         letter-spacing: 0.03em;
@@ -124,7 +124,7 @@
             width: 60px;
         }
     }
-    .h5 {
+    .title5 {
         margin-bottom: 15px;
         @include screen-768 {
             margin-bottom: 10px;

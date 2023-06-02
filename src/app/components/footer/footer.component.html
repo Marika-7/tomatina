@@ -1,8 +1,8 @@
 <footer class="footer">
 
     <div class="first">
-        <a href="#" class="first__link">Вакансії</a>
-        <a href="#" class="first__link">Договір Оферта</a>
+        <a [routerLink]="[ '/delivery' ]" class="btn-link">Доставка</a>
+        <a [routerLink]="[ '/about' ]" class="btn-link">Про Томатіну</a>
     </div>
 
     <div class="contact">
@@ -57,14 +57,14 @@
 
     <div class="social">
         <span class="social__span">Слідкуй за нами</span>
-        <a href="#" class="btn-icon">
-            <svg class="svg">
-                <use class="svg__bg svg__bg_fb" href="../../../assets/images/icon_sprite.svg#bg"></use>
-                <use class="svg__img svg__img_fb" href="../../../assets/images/icon_sprite.svg#fb"></use>
+        <a href="#">
+            <svg class="svg svg_fb">
+                <use class="svg__bg" href="../../../assets/images/icon_sprite.svg#bg"></use>
+                <use class="svg__img" href="../../../assets/images/icon_sprite.svg#fb"></use>
             </svg>
         </a>
-        <a href="#" class="btn-icon">
-            <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 45">
+        <a href="#">
+            <svg class="svg svg_inst" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 45">
                 <defs>
                     <linearGradient id="a" gradientTransform="rotate(90)">
                         <stop offset="12.22%" stop-color="#505FD1"/>
@@ -73,8 +73,8 @@
                         <stop offset="85.56%" stop-color="#FED16E"/>
                     </linearGradient>
                 </defs>
-                <use class="svg__bg svg__bg_inst" href="../../../assets/images/icon_sprite.svg#bg"></use>
-                <use class="svg__img svg__img_inst" href="../../../assets/images/icon_sprite.svg#inst"></use>
+                <use class="svg__bg" href="../../../assets/images/icon_sprite.svg#bg"></use>
+                <use class="svg__img" href="../../../assets/images/icon_sprite.svg#inst"></use>
             </svg>
         </a>
     </div>

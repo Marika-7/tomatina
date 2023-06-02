@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper">
 
     <div class="top">
         <p class="top__p">
@@ -12,7 +12,7 @@
     </div>
 
     <header class="header">
-        <a href="#" class="logo">
+        <a [routerLink]="[ '/' ]" class="logo">
             <img src="../../../assets/images/logo.png" alt="на головну сторінку" class="logo__img">
         </a>
 
@@ -59,7 +59,7 @@
                 </ul>
             </div>
             <a href="#" class="btn-link">Збери сам</a>
-            <a href="#" class="btn-link">Доставка</a>
+            <a [routerLink]="[ '/delivery' ]" class="btn-link">Доставка</a>
         </nav>
 
         <div class="block-right">
@@ -71,16 +71,16 @@
                  *ngIf="screenSize[1280]">
                 Залишити відгук
             </a>
-            <button class="btn-icon" type="button" 
+            <button type="button" 
                 (click)="addToFavorite()">
-                <svg class="svg">
+                <svg class="svg svg_hover">
                     <use class="svg__bg" href="../../../assets/images/icon_sprite.svg#bg"></use>
                     <use class="svg__img" href="../../../assets/images/icon_sprite.svg#heart"></use>
                 </svg>
             </button>
             <div class="phone" 
                 *ngIf="screenSize[768]">
-                <button class="btn-icon" type="button">
+                <button type="button">
                     <svg class="svg">
                         <use class="svg__bg" href="../../../assets/images/icon_sprite.svg#bg"></use>
                         <use class="svg__img" href="../../../assets/images/icon_sprite.svg#phone"></use>
@@ -100,9 +100,9 @@
                 (click)="openSignIn()">
                 <img src="../../../assets/images/icon_user.svg" alt="Увійти" class="btn-link__img">
                 Вхід</button>
-            <button class="btn-icon" type="button" 
+            <button type="button" 
                 (click)="toggleBurgerMenu()">
-                <svg class="svg">
+                <svg class="svg svg_hover">
                     <use class="svg__bg" href="../../../assets/images/icon_sprite.svg#bg"></use>
                     <use class="svg__img" href="../../../assets/images/icon_sprite.svg#menu"></use>
                 </svg>
@@ -121,9 +121,15 @@
             </svg>
         </button>
         <div class="menu__block">
-            <a href="#" class="menu__link">Про Томатіну</a>
+            <a [routerLink]="[ '/about' ]" class="menu__link" 
+                (click)="toggleBurgerMenu()">
+                Про Томатіну
+            </a>
             <a href="#" class="menu__link">Збери сам</a>
-            <a href="#" class="menu__link">Доставка</a>
+            <a [routerLink]="[ '/delivery' ]" class="menu__link" 
+                (click)="toggleBurgerMenu()">
+                Доставка
+            </a>
             <a href="#" class="menu__link">Вакансії</a>
             <a href="#" class="menu__link">Контакти</a>
         </div>

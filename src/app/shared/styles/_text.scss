@@ -68,13 +68,16 @@
 }
 
 .h1 {
+    margin-bottom: 60px;
     text-align: center;
     color: $text-bold;
     font-size: 42px;
     @include screen-1280 {
+        margin-bottom: 40px;
         font-size: 38px;
     }
     @include screen-768 {
+        margin-bottom: 20px;
         font-size: 34px;
     }
     @include screen-480 {
@@ -121,6 +124,19 @@
     }
 }
 
+.h5 {
+    color: $text-bold;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    @include screen-1280 {
+        font-size: 20px;
+    }
+    @include screen-480 {
+        font-size: 18px;
+    }
+}
+
 .p {
     color: $text-normal;
     font-size: 16px;
@@ -137,9 +153,12 @@
         font-size: 16px;
         line-height: 1.5rem;
         position: relative;
-        // @include screen-480 {
-        //     font-size: 14px;
-        // }
+        @include screen-480 {
+            margin-top: 6px;
+            margin-left: 20px;
+            font-size: 14px;
+            line-height: 1.3rem;
+        }
         &::before {
             content: '';
             display: inline-block;
@@ -155,6 +174,18 @@
                 height: 8px;
                 top: 9px;
             }
+            @include screen-480 {
+                border-width: 1px;
+                width: 6px;
+                height: 6px;
+                left: -20px;
+            }
+        }
+        &_yellow::before {
+            border-color: $yellow;
+        }
+        &_red::before {
+            border-color: $red;
         }
     }
 }

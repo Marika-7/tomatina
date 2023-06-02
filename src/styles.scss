@@ -20,10 +20,6 @@ html:not(.touch-screen) *::-webkit-scrollbar-thumb {
     background:#599921;
 }
 
-// html {
-//     --details-transition-time: 400ms;
-//   }
-
 body {
     font-family: 'Geometria', sans-serif;
     color: $text-normal;
@@ -32,4 +28,27 @@ body {
 
 :focus {
     outline-color: $text-bold;
+}
+
+.container {
+    padding: 60px 80px 0;
+    @include screen-1280 {
+        padding: 60px 60px 0;
+    }
+    @include screen-768 {
+        padding: 30px 40px 0;
+    }
+    @include screen-480 {
+        padding: 20px 20px 0;
+    }
+}
+
+.section {
+    margin-bottom: 90px;
+    @include screen-1280 {
+        margin-bottom: 80px;
+    }
+    @include screen-768 {
+        margin-bottom: 30px;
+    }
 }

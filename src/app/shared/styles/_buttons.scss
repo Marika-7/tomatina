@@ -56,8 +56,6 @@
     }
 }
 
-// .btn-icon {}
-
 .svg {
     width: 47px;
     height: 45px;
@@ -73,31 +71,43 @@
         fill:#599921;
         stroke: $main-color2;
         transition:all 0.3s;
-        &_fb {
+    }
+    &__img {
+        fill:$white;
+        transition:all 0.3s;
+        stroke: $white;
+    }
+    &_hover {
+        &:hover .svg__bg {
+            fill: transparent;
+        }
+        &:hover .svg__img {
+            fill:$main-color;
+            stroke: $main-color;
+        }
+    }
+    &_fb {
+        .svg__bg {
             fill: $fb;
             stroke: $fb;
         }
-        &_inst {
+        &:hover .svg__bg {
+            fill: transparent;
+        }
+        &:hover .svg__img {
+            fill: $fb;
+        }
+    }
+    &_inst {
+        .svg__bg {
             fill: $inst;
             stroke: $inst;
         }
-    }
-    &:hover &__bg {
-        fill: transparent;
-    }
-    &__img {
-        fill:#fff;
-        transition:all 0.3s;
-        stroke: #fff;
-    }
-    &:hover &__img {
-        fill:#599921;
-        stroke: #599921;
-        &_fb {
-            fill: $fb;
+        &:hover .svg__bg {
+            fill: transparent;
         }
-        &_inst {
+        &:hover .svg__img {
             fill: $inst;
-        }
+        }   
     }
 }

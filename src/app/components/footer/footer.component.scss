@@ -51,21 +51,6 @@
     align-self: start;
     display: flex;
     justify-content: space-between;
-    &__link {
-        padding: 2px;
-        font-size: 14px;
-        &:nth-child(1) {
-            color: $text-bold;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-        &:hover {
-            color: $main-color;
-        }
-        @include screen-480 {
-            font-size: 12px;
-        }
-    }
 }
 
 .contact {

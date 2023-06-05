@@ -265,13 +265,16 @@
     width: 380px;
     height: 100vh;
     padding: 45px 60px;
-    background-color: $white;
+    background: $white url('../../../assets/images/menu_decor.svg') 100% 100% no-repeat;
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
     right: 0;
     animation: translateX .3s ease-in;
+    @include screen-1024 {
+        background-image: none;
+    }
     @include screen-480 {
         width: 100%;
     }

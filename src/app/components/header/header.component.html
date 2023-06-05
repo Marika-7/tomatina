@@ -74,16 +74,16 @@
             <button type="button" 
                 (click)="addToFavorite()">
                 <svg class="svg svg_hover">
-                    <use class="svg__bg" href="../../../assets/images/icon_sprite.svg#bg"></use>
-                    <use class="svg__img" href="../../../assets/images/icon_sprite.svg#heart"></use>
+                    <use class="svg__bg" href="../../../assets/images/icon_sprite_bg.svg#bg"></use>
+                    <use class="svg__img" href="../../../assets/images/icon_sprite_bg.svg#heart"></use>
                 </svg>
             </button>
             <div class="phone" 
                 *ngIf="screenSize[768]">
                 <button type="button">
                     <svg class="svg">
-                        <use class="svg__bg" href="../../../assets/images/icon_sprite.svg#bg"></use>
-                        <use class="svg__img" href="../../../assets/images/icon_sprite.svg#phone"></use>
+                        <use class="svg__bg" href="../../../assets/images/icon_sprite_bg.svg#bg"></use>
+                        <use class="svg__img" href="../../../assets/images/icon_sprite_bg.svg#phone"></use>
                     </svg>
                 </button>
                 <div class="popup">
@@ -103,8 +103,8 @@
             <button type="button" 
                 (click)="toggleBurgerMenu()">
                 <svg class="svg svg_hover">
-                    <use class="svg__bg" href="../../../assets/images/icon_sprite.svg#bg"></use>
-                    <use class="svg__img" href="../../../assets/images/icon_sprite.svg#menu"></use>
+                    <use class="svg__bg" href="../../../assets/images/icon_sprite_bg.svg#bg"></use>
+                    <use class="svg__img" href="../../../assets/images/icon_sprite_bg.svg#menu"></use>
                 </svg>
             </button>
         </div>
@@ -131,7 +131,10 @@
                 Доставка
             </a>
             <a href="#" class="menu__link">Вакансії</a>
-            <a href="#" class="menu__link">Контакти</a>
+            <a [routerLink]="[ '/contact' ]" class="menu__link" 
+                (click)="toggleBurgerMenu()">
+                Контакти
+            </a>
         </div>
     </div>
 </div>

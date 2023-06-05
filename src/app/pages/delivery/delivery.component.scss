@@ -18,7 +18,7 @@
     display: flex;
     gap: 30px;
     @include screen-1280 {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 }
 
@@ -27,7 +27,6 @@
     flex-direction: column;
     row-gap: 80px;
     @include screen-1280 {
-        order: 2;
         row-gap: 60px;
     }
     @include screen-768 {
@@ -87,9 +86,6 @@
 }
 
 .map {
-    @include screen-1280 {
-        order: 1;
-    }
     &__img {
         width: 100%;
     }

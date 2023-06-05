@@ -3,13 +3,16 @@
     flex-direction: column;
     align-items: stretch;
     row-gap: 15px;
+    @include screen-600 {
+        row-gap: 10px;
+    }
     &__row {
         width: 100%;
         display: flex;
         column-gap: 20px;
         @include screen-600 {
             flex-direction: column;
-            row-gap: 15px;
+            row-gap: 10px;
         }
     }
     .btn-green {
@@ -27,7 +30,7 @@
 .input {
     width: 100%;
     height: 54px;
-    padding: 0 20px;
+    padding: 15px 20px;
     border: 1px solid $border;
     border-radius: 3px;
     font-size: 16px;
@@ -37,6 +40,13 @@
     }
     @include screen-480 {
         font-size: 14px;
+    }
+}
+
+.textarea {
+    height: 112px;
+    @include screen-600 {
+        height: 102px;
     }
 }
 

@@ -1,6 +1,4 @@
-task
-    about
-        
+task        
 
 later
     header
@@ -29,7 +27,7 @@ questions
     -        favorite
             about
             delivery
-    -        contacts
+            contact
         admin/
     -        admin-category
     -        admin-product
@@ -60,6 +58,8 @@ questions
     ng g c pages/delivery
     ng g m pages/about
     ng g c pages/about
+    ng g m pages/contact
+    ng g c pages/contact
 
 -------------------- files --------------------
 
@@ -74,6 +74,10 @@ questions
     shared/styles/_forms.scss
 
     shared/sharedModule.ts
+
+    pages/delivery/delivery-routing.module.ts
+    pages/about/about-routing.module.ts
+    pages/contact/contact-routing.module.ts
 
 -------------------- npm --------------------
 
@@ -103,6 +107,7 @@ questions
     git commit -m "create home"
     git commit -m "create delivery"
     git commit -m "create about"
+    git commit -m "create contact"
 
 -------------------- command --------------------
 

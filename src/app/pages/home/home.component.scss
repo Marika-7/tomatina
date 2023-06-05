@@ -4,10 +4,7 @@
 .banner {
     width: 100%;
     height: 37vw;
-    background-image: url('../../../assets/images/banner.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url('../../../assets/images/banner.png') center/cover no-repeat;
     @include screen-768 {
         background-image: url('../../../assets/images/banner-m.png');
         height: 90vw;

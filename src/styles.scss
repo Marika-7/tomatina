@@ -3,8 +3,10 @@
 @import 'src/app/shared/styles/variables';
 @import 'src/app/shared/styles/mixins';
 @import 'src/app/shared/styles/text';
+@import 'src/app/shared/styles/nav-select';
 @import 'src/app/shared/styles/buttons';
 @import 'src/app/shared/styles/forms';
+@import 'src/app/shared/styles/table';
 
 html:not(.touch-screen)::-webkit-scrollbar,
 html:not(.touch-screen) *::-webkit-scrollbar {

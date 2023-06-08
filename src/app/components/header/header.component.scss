@@ -67,7 +67,7 @@
     }
 }
 
-.nav {
+.nav-h {
     height: 100%;
     display: flex;
     align-items: center;
@@ -181,6 +181,7 @@
     .btn-milk {
         padding: 20px 30px;
         color: $main-color;
+        font-weight: 700;
         letter-spacing: .15em;
         &:hover {
             color: $white;

@@ -1,4 +1,14 @@
-task        
+task
+    admin
+        admin-category
+        admin-product
+        admin-order
+    servises
+    interfaces
+    remake
+        header-top
+        banner?
+
 
 later
     header
@@ -28,11 +38,11 @@ questions
             about
             delivery
             contact
-        admin/
-    -        admin-category
-    -        admin-product
-    -        admin-orders
-        user/
+        admin.component/
+            admin-category
+            admin-product
+            admin-order
+    -    user/
     -        user-info
     -        user-favorite
     -        user-orders
@@ -61,6 +71,12 @@ questions
     ng g m pages/contact
     ng g c pages/contact
 
+    ng g m admin
+    ng g c admin
+    ng g c admin/admin-category
+    ng g c admin/admin-product
+    ng g c admin/admin-order
+
 -------------------- files --------------------
 
     structure.txt
@@ -70,14 +86,18 @@ questions
     shared/styles/_variables.scss
     shared/styles/_mixins.scss
     shared/styles/_text.scss
+    shared/styles/_nav-select.scss
     shared/styles/_buttons.scss
     shared/styles/_forms.scss
+    shared/styles/_table.scss
 
     shared/sharedModule.ts
 
     pages/delivery/delivery-routing.module.ts
     pages/about/about-routing.module.ts
     pages/contact/contact-routing.module.ts
+
+    admin/admin-routing.module.ts
 
 -------------------- npm --------------------
 
@@ -108,6 +128,7 @@ questions
     git commit -m "create delivery"
     git commit -m "create about"
     git commit -m "create contact"
+    git commit -m "create admin"
 
 -------------------- command --------------------
 
@@ -115,6 +136,7 @@ questions
     firebase init
     ng build
     firebase deploy -m "first commit"
+    firebase deploy -m "add static pages"
 
     Project Console: https://console.firebase.google.com/project/tomatina-3c277/overview
     Hosting URL: https://tomatina-3c277.web.app

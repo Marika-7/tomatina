@@ -16,14 +16,15 @@
 }
 
 .btn-milk {
-    padding: 15px;
+    display: inline-block;
+    padding: 15px 24px;
     background-color: $milk;
     border-radius: 6px;
-    color: $text-bold;
+    color: $text-normal;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
-    transition: .3s;
+    transition: all .3s;
     &:hover {
         background-color: $main-color;
         color: $white;

@@ -16,44 +16,44 @@
             <img src="../../../assets/images/logo.png" alt="на головну сторінку" class="logo__img">
         </a>
 
-        <nav class="nav">
-            <div class="nav__wrapper">
+        <nav class="nav-h">
+            <div class="nav-h__wrapper">
                 <button class="btn-link">Меню</button>
-                <ul class="nav__ul">
-                    <li class="nav__li">
-                        <a href="#" class="nav__link">
-                            <img src="../../../assets/images/category_breakfast.webp" alt="" class="nav__img">
-                            <span class="nav__span">Сніданки до 18:00</span>
+                <ul class="nav-h__ul">
+                    <li class="nav-h__li">
+                        <a href="#" class="nav-h__link">
+                            <img src="../../../assets/images/category_breakfast.webp" alt="" class="nav-h__img">
+                            <span class="nav-h__span">Сніданки до 18:00</span>
                         </a>
                     </li>
-                    <li class="nav__li">
-                        <a href="#" class="nav__link">
-                            <img src="../../../assets/images/category_paste.webp" alt="" class="nav__img">
-                            <span class="nav__span">Салати пасти</span>
+                    <li class="nav-h__li">
+                        <a href="#" class="nav-h__link">
+                            <img src="../../../assets/images/category_paste.webp" alt="" class="nav-h__img">
+                            <span class="nav-h__span">Салати пасти</span>
                         </a>
                     </li>
-                    <li class="nav__li">
-                        <a href="#" class="nav__link">
-                            <img src="../../../assets/images/category_salad.webp" alt="" class="nav__img">
-                            <span class="nav__span">Салати</span>
+                    <li class="nav-h__li">
+                        <a href="#" class="nav-h__link">
+                            <img src="../../../assets/images/category_salad.webp" alt="" class="nav-h__img">
+                            <span class="nav-h__span">Салати</span>
                         </a>
                     </li>
-                    <li class="nav__li">
-                        <a href="#" class="nav__link">
-                            <img src="../../../assets/images/category_sandwich.webp" alt="" class="nav__img">
-                            <span class="nav__span">Фіт сендвічі</span>
+                    <li class="nav-h__li">
+                        <a href="#" class="nav-h__link">
+                            <img src="../../../assets/images/category_sandwich.webp" alt="" class="nav-h__img">
+                            <span class="nav-h__span">Фіт сендвічі</span>
                         </a>
                     </li>
-                    <li class="nav__li">
-                        <a href="#" class="nav__link">
-                            <img src="../../../assets/images/category_soup.webp" alt="" class="nav__img">
-                            <span class="nav__span">Супи</span>
+                    <li class="nav-h__li">
+                        <a href="#" class="nav-h__link">
+                            <img src="../../../assets/images/category_soup.webp" alt="" class="nav-h__img">
+                            <span class="nav-h__span">Супи</span>
                         </a>
                     </li>
-                    <li class="nav__li">
-                        <a href="#" class="nav__link">
-                            <img src="../../../assets/images/category_drink.webp" alt="" class="nav__img">
-                            <span class="nav__span">Напої</span>
+                    <li class="nav-h__li">
+                        <a href="#" class="nav-h__link">
+                            <img src="../../../assets/images/category_drink.webp" alt="" class="nav-h__img">
+                            <span class="nav-h__span">Напої</span>
                         </a>
                     </li>
                 </ul>
@@ -130,10 +130,13 @@
                 (click)="toggleBurgerMenu()">
                 Доставка
             </a>
-            <a href="#" class="menu__link">Вакансії</a>
             <a [routerLink]="[ '/contact' ]" class="menu__link" 
                 (click)="toggleBurgerMenu()">
                 Контакти
+            </a>
+            <a [routerLink]="[ '/admin' ]" class="menu__link" 
+                (click)="toggleBurgerMenu()">
+                Admin
             </a>
         </div>
     </div>

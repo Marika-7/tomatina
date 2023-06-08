@@ -1,0 +1,12 @@
+@import 'src/app/shared/styles/variables';
+@import 'src/app/shared/styles/mixins';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper {
+    width: 100%;
+}

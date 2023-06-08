@@ -2,10 +2,10 @@
 @import 'src/app/shared/styles/mixins';
 
 .container {
-    padding: 60px 100px 0;
+    
     background: url('../../../assets/images/seo_decor_one.svg') 0 95% no-repeat, url('../../../assets/images/seo_decor_two.svg') 100% 70% no-repeat;
-    @include screen-1280 {
-        background-image: none;
+    @media screen and (min-width: 1280px) {
+        padding: 60px 100px 0;
     }
 }
 

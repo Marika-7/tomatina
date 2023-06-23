@@ -145,7 +145,7 @@
         transition: all .3s;
         &:hover {
             background-color: $white;
-            color: $main-color;
+            color: $green;
         }
     }
     &__img {
@@ -180,7 +180,7 @@
     }
     .btn-milk {
         padding: 20px 30px;
-        color: $main-color;
+        color: $green;
         font-weight: 700;
         letter-spacing: .15em;
         &:hover {
@@ -233,7 +233,7 @@
             font-weight: bold;
             font-size: 14px;
             &:hover {
-                color: $main-color;
+                color: $green;
             }
         }
         .text {
@@ -288,7 +288,7 @@
         stroke: $text-bold;
         stroke-width: 3;
         &:hover {
-            stroke: $main-color;
+            stroke: $green;
         }
     }
     &__block {
@@ -307,7 +307,7 @@
         text-transform: uppercase;
         transition: all .3s;
         &:hover {
-            background-color: $main-color;
+            background-color: $green;
             color: $white;
         }
     }
@@ -337,7 +337,7 @@
             height: 105px;
         }
         &:hover {
-            border-color: $main-color;
+            border-color: $green;
         }
     }
     &__img {
@@ -457,7 +457,7 @@
         }
     }
     &:hover &__svg {
-        stroke: $main-color;
+        stroke: $green;
     }
 }
 

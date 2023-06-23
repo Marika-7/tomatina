@@ -1,7 +1,8 @@
 task
     admin
-        admin-category
         admin-product
+            form
+            table
         admin-order
     servises
     interfaces
@@ -48,6 +49,7 @@ questions
     -        user-orders
 
         shared/
+            constants/
             directives/
             guards/
             interfaces/
@@ -77,6 +79,10 @@ questions
     ng g c admin/admin-product
     ng g c admin/admin-order
 
+    ng g s shared/services/images/images
+    ng g s shared/services/category/category
+    ng g s shared/services/product/product
+
 -------------------- files --------------------
 
     structure.txt
@@ -90,6 +96,9 @@ questions
     shared/styles/_buttons.scss
     shared/styles/_forms.scss
     shared/styles/_table.scss
+
+    shared/intefaces/category/category.interface.ts
+    shared/intefaces/product/product.interface.ts
 
     shared/sharedModule.ts
 
@@ -129,6 +138,7 @@ questions
     git commit -m "create about"
     git commit -m "create contact"
     git commit -m "create admin"
+    git commit -m "create admin-category"
 
 -------------------- command --------------------
 

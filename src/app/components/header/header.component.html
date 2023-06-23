@@ -20,40 +20,11 @@
             <div class="nav-h__wrapper">
                 <button class="btn-link">Меню</button>
                 <ul class="nav-h__ul">
-                    <li class="nav-h__li">
+                    <li class="nav-h__li" *ngFor="let category of userCategories">
                         <a href="#" class="nav-h__link">
-                            <img src="../../../assets/images/category_breakfast.webp" alt="" class="nav-h__img">
-                            <span class="nav-h__span">Сніданки до 18:00</span>
-                        </a>
-                    </li>
-                    <li class="nav-h__li">
-                        <a href="#" class="nav-h__link">
-                            <img src="../../../assets/images/category_paste.webp" alt="" class="nav-h__img">
-                            <span class="nav-h__span">Салати пасти</span>
-                        </a>
-                    </li>
-                    <li class="nav-h__li">
-                        <a href="#" class="nav-h__link">
-                            <img src="../../../assets/images/category_salad.webp" alt="" class="nav-h__img">
-                            <span class="nav-h__span">Салати</span>
-                        </a>
-                    </li>
-                    <li class="nav-h__li">
-                        <a href="#" class="nav-h__link">
-                            <img src="../../../assets/images/category_sandwich.webp" alt="" class="nav-h__img">
-                            <span class="nav-h__span">Фіт сендвічі</span>
-                        </a>
-                    </li>
-                    <li class="nav-h__li">
-                        <a href="#" class="nav-h__link">
-                            <img src="../../../assets/images/category_soup.webp" alt="" class="nav-h__img">
-                            <span class="nav-h__span">Супи</span>
-                        </a>
-                    </li>
-                    <li class="nav-h__li">
-                        <a href="#" class="nav-h__link">
-                            <img src="../../../assets/images/category_drink.webp" alt="" class="nav-h__img">
-                            <span class="nav-h__span">Напої</span>
+                            <img [src]="category.imagePath" [alt]="category.name" 
+                                class="nav-h__img">
+                            <span class="nav-h__span">{{ category.name }}</span>
                         </a>
                     </li>
                 </ul>

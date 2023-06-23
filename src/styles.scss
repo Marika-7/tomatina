@@ -32,6 +32,14 @@ body {
     outline-color: $text-bold;
 }
 
+:disabled {
+    filter: opacity(50%);
+    &:hover {
+        background-color: $green;
+        color: $white;
+    }
+}
+
 .container {
     padding: 60px 80px 0;
     @include screen-1280 {

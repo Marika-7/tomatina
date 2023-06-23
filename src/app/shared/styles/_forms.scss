@@ -15,15 +15,14 @@
             row-gap: 10px;
         }
     }
-    .btn-green {
-        height: 60px;
-        font-size: 14px;
-        @include screen-600 {
-            height: 50px;
-        }
-        @include screen-480 {
-            font-size: 12px;
-        }
+    &__inner {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+    }
+    &__img {
+        height: 50px;
     }
 }
 
@@ -75,7 +74,7 @@
         display: inline-block;
         width: 0px;
         height: 0px;
-        background-color: $main-color;
+        background-color: $green;
         transition: all .3s;
         position: absolute;
         top: 9px;
@@ -83,7 +82,7 @@
     }
     &:has(input:checked) {
         &::before {
-            border-color: $main-color;
+            border-color: $green;
         }
         &::after {
             width: 6px;
@@ -108,4 +107,25 @@
         width: 12px;
         height: 12px;
     }
+}
+
+::file-selector-button {
+    margin-right: 8px;
+    padding: 3px 10px;
+    background-color: $green;
+    border: 1px solid $green;
+    border-radius: 5px;
+    font-family: inherit;
+    color: $white;
+    font-size: 13px;
+    cursor: pointer;
+    &:hover {
+        background-color: $white;
+        color: $green;
+    }
+}
+
+.progress {
+    width: 300px;
+    height: 25px;
 }

@@ -15,11 +15,6 @@ a {
     color: inherit;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
 input,
 textarea,
 select,
@@ -36,6 +31,11 @@ button {
 
 textarea {
     resize: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 summary {

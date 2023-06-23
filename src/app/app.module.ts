@@ -9,11 +9,6 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { HomeComponent } from './pages/home/home.component';
 
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,11 +18,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SharedModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

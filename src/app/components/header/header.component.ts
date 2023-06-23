@@ -1,5 +1,7 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { ICategoryResponse } from 'src/app/shared/interfaces/category/category.interface';
+import { CategoryService } from 'src/app/shared/services/category/category.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public userCategories!: ICategoryResponse[];
   public yourDelivery = true;
   public screenSize = {
     1280: false,
@@ -19,11 +22,20 @@ export class HeaderComponent implements OnInit {
   public signUpIsOpen = false;
 
   constructor(
+    private categoryService: CategoryService,
     private breakpointObserver: BreakpointObserver
   ) { }
 
   ngOnInit(): void {
+    this.loadCategories();
     this.checkScreenSize();
+  }
+
+  loadCategories(): void {
+    this.categoryService.getAll()
+      .subscribe(data => {
+        this.userCategories = data as ICategoryResponse[];
+      });
   }
 
   checkScreenSize(): void {

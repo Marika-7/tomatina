@@ -15,6 +15,15 @@
             row-gap: 10px;
         }
     }
+    &__half-row {
+        width: 50%;
+        display: flex;
+        column-gap: 20px;
+        @include screen-600 {
+            flex-direction: column;
+            row-gap: 10px;
+        }
+    }
     &__inner {
         display: flex;
         justify-content: flex-start;
@@ -40,6 +49,9 @@
     @include screen-480 {
         font-size: 14px;
     }
+}
+select.input {
+    padding: 0 20px;
 }
 
 .textarea {

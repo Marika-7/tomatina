@@ -1,20 +1,51 @@
 <div class="add">
 
-    <!-- <button class="btn-white" 
+    <button class="btn-white" 
         (click)="toggleOpenForm()">
-        {{ editStatus ? 'Редагувати' : 'Додати категорію' }}
-    </button> -->
+        {{ editStatus ? 'Редагувати' : 'Додати товар' }}
+    </button>
 
-    <!-- <form class="form" 
+    <form class="form" 
         *ngIf="formIsOpen" 
-        [formGroup]="categoryForm" 
-        (ngSubmit)="saveCategory()">
+        [formGroup]="productForm" 
+        (ngSubmit)="saveProduct()">
         <div class="form__row">
             <input type="text" class="input" placeholder="*Назва" 
                 formControlName="name">
-            <input type="text" class="input" placeholder="*Шлях" 
-                formControlName="path">
+            <select class="input" formControlName="category">
+                <option value="">*Категорія</option>
+                <option [ngValue]="category.name" *ngFor="let category of adminCategories">
+                    {{ category.name }}
+                </option>
+            </select>
         </div>
+        <div class="form__row">
+            <div class="form__half-row">
+                <input type="text" class="input" placeholder="*Шлях"
+                    formControlName="path">
+            </div>
+            <div class="form__half-row">
+                <input type="text" class="input" placeholder="*Вага"
+                    formControlName="weight">
+                <input type="number" class="input" placeholder="*Ціна"
+                    formControlName="price">
+            </div>
+        </div>
+        <div class="form__row">
+            <input type="number" class="input" placeholder="*Калорії" 
+                formControlName="calories">
+            <input type="number" class="input" placeholder="*Білки" 
+                formControlName="proteins">
+            <input type="number" class="input" placeholder="*Жири" 
+                formControlName="fats">
+            <input type="number" class="input" placeholder="*Вуглеводи" 
+                formControlName="carbohydrates">
+        </div>
+        <textarea class="input textarea" placeholder="*Опис" 
+            formControlName="description"></textarea>
+        <textarea class="input textarea" placeholder="*Алергени" 
+            formControlName="allergens"></textarea>
+
         <ng-container *ngIf="!isUploaded">
             <input type="file" class="input" 
                 (change)="uploadImage($event)">
@@ -33,38 +64,56 @@
         
         
         <button class="btn-green" type="submit" 
-            [disabled]="categoryForm.invalid">
+            [disabled]="productForm.invalid">
             Надіслати
         </button>
-    </form> -->
+    </form>
 </div>
 
 <table class="table">
     <tr>
+        <th class="table__th">Категорія</th>
         <th class="table__th">Назва</th>
         <th class="table__th">Шлях</th>
         <th class="table__th">Картинка</th>
+        <th class="table__th">Опис</th>
+        <th class="table__th">Алергени</th>
+        <th class="table__th">Вага</th>
+        <th class="table__th">Калорії</th>
+        <th class="table__th">Білки</th>
+        <th class="table__th">Жири</th>
+        <th class="table__th">Вуглеводи</th>
+        <th class="table__th">Ціна</th>
         <th class="table__th">Дії</th>
     </tr>
-    <!-- <tr *ngFor="let category of adminCategories">
-        <td class="table__td">{{ category.name }}</td>
-        <td class="table__td">{{ category.path }}</td>
+    <tr *ngFor="let product of adminProducts">
+        <td class="table__td">{{ product.category }}</td>
+        <td class="table__td">{{ product.name }}</td>
+        <td class="table__td">{{ product.path }}</td>
         <td class="table__td">
-            <img [src]="category.imagePath" 
-                [alt]="category.name" 
+            <img [src]="product.imagePath" 
+                [alt]="product.name" 
                 class="table__img">
         </td>
+        <td class="table__td">{{ product.description }}</td>
+        <td class="table__td">{{ product.allergens }}</td>
+        <td class="table__td text-wrap">{{ product.weight }}</td>
+        <td class="table__td">{{ product.calories }}</td>
+        <td class="table__td">{{ product.proteins }}</td>
+        <td class="table__td">{{ product.fats }}</td>
+        <td class="table__td">{{ product.carbohydrates }}</td>
+        <td class="table__td text-wrap">{{ product.price }} грн</td>
         <td class="table__td">
             <span class="table__action">
                 <button class="table__btn underline"
-                    (click)="editCategory(category)">
+                    (click)="editProduct(product)">
                     Редагувати
                 </button>
                 <button class="table__btn underline"
-                    (click)="deleteCategory(category)">
+                    (click)="deleteProduct(product)">
                     Видалити
                 </button>
             </span>
         </td>
-    </tr> -->
+    </tr>
 </table>

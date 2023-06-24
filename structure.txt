@@ -1,9 +1,10 @@
 task
     admin
-        admin-product
+        edit nav-bar
+        admin-order
+            service
             form
             table
-        admin-order
     servises
     interfaces
     remake
@@ -139,6 +140,7 @@ questions
     git commit -m "create contact"
     git commit -m "create admin"
     git commit -m "create admin-category"
+    git commit -m "create admin-product"
 
 -------------------- command --------------------
 

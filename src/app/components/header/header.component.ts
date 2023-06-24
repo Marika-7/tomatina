@@ -11,12 +11,12 @@ import { CategoryService } from 'src/app/shared/services/category/category.servi
 export class HeaderComponent implements OnInit {
 
   public userCategories!: ICategoryResponse[];
-  public yourDelivery = true;
+  public yourDelivery = '';
   public screenSize = {
     1280: false,
     768: false
   };
-  public changeDeliveryIsOpen = false;
+  public changeDeliveryIsOpen = false; // true;
   public menuIsOpen = false;
   public signInIsOpen = false;
   public signUpIsOpen = false;
@@ -50,8 +50,8 @@ export class HeaderComponent implements OnInit {
     this.changeDeliveryIsOpen = true;
   }
 
-  changeDelivery(check: boolean): void {
-    this.yourDelivery = check;
+  changeDelivery(delivery: string): void {
+    this.yourDelivery = delivery;
     this.changeDeliveryIsOpen = false;
   }
 

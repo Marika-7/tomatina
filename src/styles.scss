@@ -33,7 +33,7 @@ body {
 }
 
 :disabled {
-    filter: opacity(50%);
+    filter: opacity(70%);
     &:hover {
         background-color: $green;
         color: $white;

@@ -12,6 +12,7 @@
     text-transform: uppercase;
     @include screen-600 {
         height: 50px;
+        padding: 14px 30px;
     }
     @include screen-480 {
         font-size: 12px;

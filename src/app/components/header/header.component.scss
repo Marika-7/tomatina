@@ -10,24 +10,45 @@
 .top {
     height: 52px;
     background-color: $milk;
+    background-image: url('../../../assets/images/bg-informer.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 40px;
-    @include screen-768 {
-        height: 72px;
+    column-gap: 20px;
+    @include screen-600 {
+        height: 80px;
         flex-direction: column;
         row-gap: 10px;
     }
     &__p {
+        color: $white;
         font-size: 14px;
         font-weight: 500;
-        color: $text-bold;
     }
-    &__span {
-        margin-left: 5px;
-        font-size: 15px;
-        font-weight: 400;
+    &__div {
+        display: flex;
+        column-gap: 20px;
+    }
+    &__btn {
+        padding: 5px 15px;
+        background-color: $bg-gray;
+        border-radius: 13px;
+        color: $dark-green;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: all .3s;
+        @include screen-480 {
+            width: none;
+            font-size: 10px;
+        }
+        &:hover {
+            background-color: $white;
+        }
+        &_active {
+            background-color: $white;
+        }
     }
 }
 

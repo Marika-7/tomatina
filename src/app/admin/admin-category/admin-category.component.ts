@@ -13,28 +13,21 @@ export class AdminCategoryComponent implements OnInit {
 
   public adminCategories!: ICategoryResponse[];
   public categoryForm!: FormGroup;
+  private currentCategoryId!: string;
   public formIsOpen = false;
   public editStatus = false;
   public isUploaded = false;
-  private currentCategoryId!: string;
 
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
     public imageService: ImagesService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.loadCategories();
     this.initCategoryForm();
+    this.loadCategories();
     this.imageService.uploadPercent = 0;
-  }
-
-  loadCategories(): void {
-    this.categoryService.getAll()
-      .subscribe(data => {
-        this.adminCategories = data as ICategoryResponse[];
-      });
   }
 
   initCategoryForm(): void {
@@ -43,6 +36,13 @@ export class AdminCategoryComponent implements OnInit {
       path: [null, Validators.required],
       imagePath: [null, Validators.required]
     });
+  }
+
+  loadCategories(): void {
+    this.categoryService.getAll()
+      .subscribe(data => {
+        this.adminCategories = data as ICategoryResponse[];
+      });
   }
 
   toggleOpenForm(): void {
@@ -93,9 +93,9 @@ export class AdminCategoryComponent implements OnInit {
     }
     this.formIsOpen = false;
     this.editStatus = false;
-    this.categoryForm.reset();
     this.isUploaded = false;
     this.imageService.uploadPercent = 0;
+    this.categoryForm.reset();
   }
 
   editCategory(category: ICategoryResponse): void {

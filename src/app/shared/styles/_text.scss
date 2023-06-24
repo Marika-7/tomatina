@@ -144,6 +144,10 @@
     text-transform: uppercase;
 }
 
+.text-wrap {
+    white-space: nowrap;
+}
+
 .green {
     color: $green;
 }
@@ -172,13 +176,13 @@
     }
 }
 
-.underline-invert {
-    @extend .underline;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-}
+// .underline-invert {
+//     @extend .underline;
+//     font-size: 12px;
+//     text-transform: uppercase;
+//     letter-spacing: 0.1em;
+//     font-weight: 700;
+// }
 
 @media screen and (min-width: 768px) {
     .underline {

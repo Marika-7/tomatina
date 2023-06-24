@@ -1,14 +1,19 @@
 <div class="wrapper">
 
     <div class="top">
-        <p class="top__p">
-            Ваш тип доставки:
-            <span class="top__span">{{ yourDelivery ? 'Самовивіз' : 'Доставка кур’єром' }}</span>
-        </p>
-        <button class="underline-invert" type="button" 
-            (click)="openChangeDelivery()">
-            Натисніть тут щоб змінити
-        </button>
+        <p class="top__p">Тип доставки:</p>
+        <div class="top__div">
+            <button class="top__btn"
+                [ngClass]="{'top__btn_active': yourDelivery==='self pickup'}"
+                (click)="changeDelivery('self pickup')">
+                Самовивіз
+            </button>
+            <button class="top__btn"
+                [ngClass]="{'top__btn_active': yourDelivery==='by courier'}"
+                (click)="changeDelivery('by courier')">
+                Доставка кур’єром
+            </button>
+        </div>
     </div>
 
     <header class="header">
@@ -120,13 +125,13 @@
             <span class="green">Будь ласка, оберіть спосіб отримання замовлення</span>
         </h3>
         <div class="delivery">
-            <button class="delivery__btn" (click)="changeDelivery(false)">
+            <button class="delivery__btn" (click)="changeDelivery('by courier')">
                 <img src="../../../assets/images/dialog_delivery1.svg"
                     class="delivery__img" alt="Доставка кур'єром">
                 <span class="delivery__span">Доставка кур'єром</span>
             </button>
             <span class="delivery__or">або</span>
-            <button class="delivery__btn" (click)="changeDelivery(true)">
+            <button class="delivery__btn" (click)="changeDelivery('self pickup')">
                 <img src="../../../assets/images/dialog_delivery2.svg"
                     class="delivery__img" alt="Самовивіз">
                 <span class="delivery__span">Самовивіз</span>

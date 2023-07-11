@@ -7,16 +7,16 @@ import { AdminProductComponent } from './admin-product/admin-product.component';
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: AdminComponent,
     children: [
-        { path: 'category', component: AdminCategoryComponent },
-        { path: 'product', component: AdminProductComponent },
-        { path: 'order', component: AdminOrderComponent },
-        { path: '', pathMatch: 'full', redirectTo: 'order' }
+      { path: 'category', component: AdminCategoryComponent },
+      { path: 'product', component: AdminProductComponent },
+      { path: 'order', component: AdminOrderComponent },
+      { path: '', pathMatch: 'full', redirectTo: 'order' }
     ]
- }
+  }
 ];
 
 @NgModule({

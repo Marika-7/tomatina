@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICategoryRequest } from '../../interfaces/category/category.interface';
-import { DocumentData } from '@firebase/firestore'
 import { 
-  collectionData, 
-  docData, 
   CollectionReference, 
+  DocumentData, 
   DocumentReference, 
   Firestore, 
   addDoc, 
+  collection, 
+  collectionData, 
   deleteDoc, 
   doc, 
-  updateDoc, 
-  collection 
+  docData, 
+  updateDoc
 } from '@angular/fire/firestore';
 
 @Injectable({

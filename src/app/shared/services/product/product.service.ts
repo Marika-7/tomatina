@@ -12,7 +12,9 @@ import {
   deleteDoc, 
   doc, 
   docData, 
-  updateDoc 
+  query, 
+  updateDoc, 
+  where
 } from '@angular/fire/firestore';
 
 @Injectable({
@@ -30,6 +32,11 @@ export class ProductService {
 
   getAll(): Observable<DocumentData[]> {
     return collectionData(this.productCollection, { idField: 'id' });
+  }
+
+  getAllByCategory(name: string): Observable<DocumentData[]> {
+    const productCollectionById = query(collection(this.afs, 'products'), where('category.path', '==', name));
+    return collectionData(productCollectionById, { idField: 'id' });
   }
 
   getOne(id: string): Observable<DocumentData> {

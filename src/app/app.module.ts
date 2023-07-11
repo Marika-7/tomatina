@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { HomeComponent } from './pages/home/home.component';
+import { ProductModule } from "./pages/product/product.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './pages/home/home.component';
   imports: [
     BrowserModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

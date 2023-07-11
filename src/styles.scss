@@ -10,55 +10,63 @@
 
 html:not(.touch-screen)::-webkit-scrollbar,
 html:not(.touch-screen) *::-webkit-scrollbar {
-    width:5px;
-    height:5px;
+  width: 5px;
+  height: 5px;
 }
+
 html:not(.touch-screen)::-webkit-scrollbar-track,
 html:not(.touch-screen) *::-webkit-scrollbar-track {
-    background:#FFF;
+  background: #FFF;
 }
+
 html:not(.touch-screen)::-webkit-scrollbar-thumb,
 html:not(.touch-screen) *::-webkit-scrollbar-thumb {
-    background:#599921;
+  background: #599921;
 }
 
 body {
-    font-family: 'Geometria', sans-serif;
-    color: $text-normal;
-    font-weight: 400;
+  font-family: 'Geometria', sans-serif;
+  color: $text-normal;
+  font-weight: 400;
 }
 
 :focus {
-    outline-color: $text-bold;
+  outline-color: $text-bold;
 }
 
 :disabled {
-    filter: opacity(70%);
-    &:hover {
-        background-color: $green;
-        color: $white;
-    }
+  filter: opacity(70%);
+
+  &:hover {
+    background-color: $green;
+    color: $white;
+  }
 }
 
 .container {
-    padding: 60px 80px 0;
-    @include screen-1280 {
-        padding: 60px 60px 0;
-    }
-    @include screen-768 {
-        padding: 30px 40px 0;
-    }
-    @include screen-480 {
-        padding: 20px 20px 0;
-    }
+  padding: 60px 80px 0;
+
+  @include screen-1280 {
+    padding: 60px 60px 0;
+  }
+
+  @include screen-768 {
+    padding: 30px 40px 0;
+  }
+
+  @include screen-480 {
+    padding: 20px 20px 0;
+  }
 }
 
 .section {
-    margin-bottom: 90px;
-    @include screen-1280 {
-        margin-bottom: 80px;
-    }
-    @include screen-768 {
-        margin-bottom: 30px;
-    }
+  margin-bottom: 90px;
+
+  @include screen-1280 {
+    margin-bottom: 80px;
+  }
+
+  @include screen-768 {
+    margin-bottom: 30px;
+  }
 }

@@ -1,16 +1,13 @@
 task
-  nav - close popup menu
   header - favorite: remake button in link, create page
-  products
-    product card
+  basket
       
 
 plan
   product
-    info
-      nav
-      card
-      resolver
+    favorite add to LocalStorage
+    fastOrder
+    id => path
   admin
     admin-order
       table
@@ -93,7 +90,7 @@ questions
     ng g s shared/services/images/images
     ng g s shared/services/category/category
     ng g s shared/services/product/product
-  - ng g r shared/services/product/product-info
+    ng g r shared/services/product/product-info
     ng g s shared/services/order/order
 
 -------------------- files --------------------
@@ -156,6 +153,7 @@ questions
   git commit -m "create admin-category"
   git commit -m "create admin-product"
   git commit -m "create product-category"
+  git commit -m "create product pages"
 
 -------------------- command --------------------
 

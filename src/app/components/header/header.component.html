@@ -20,12 +20,23 @@
     </a>
 
     <nav class="nav-h">
-      <div class="nav-h__wrapper">
-        <button class="btn-link">Меню</button>
+      <div 
+        class="nav-h__wrapper" 
+        [ngClass]="{'nav-h__open': navMenuIsOpen}"
+      >
+        <button 
+          class="btn-link" 
+          (click)="toggleNavMenu()"
+        >
+          Меню
+        </button>
         <ul class="nav-h__ul">
           <li class="nav-h__li" *ngFor="let category of userCategories">
-            <a [routerLink]="[ '/product/'+category.path ]" 
-              class="nav-h__link">
+            <a 
+              [routerLink]="[ '/product/'+category.path ]" 
+              class="nav-h__link" 
+              (click)="closeNavMenu()"
+            >
               <img [src]="category.imagePath" [alt]="category.name" class="nav-h__img">
               <span class="nav-h__span">{{ category.name }}</span>
             </a>

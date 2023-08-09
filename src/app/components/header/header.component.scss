@@ -163,8 +163,7 @@
     }
   }
 
-  &__wrapper:hover &__ul,
-  &__wrapper:has(:focus) &__ul {
+  &__open &__ul{
     margin-top: 0;
     opacity: 1;
     visibility: visible;

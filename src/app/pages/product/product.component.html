@@ -1,6 +1,12 @@
 <div class="container">
+
   <nav class="nav" [ngClass]="{'nav-open': navSelectIsOpen}">
-    <button class="nav__select" type="button" (click)="toggleNavSelect()">{{ activePage }}</button>
+    <button 
+      class="nav__select"
+      (click)="toggleNavSelect()"
+    >
+      {{ activePage }}
+    </button>
     <div class="nav__wrapper">
       <a *ngFor="let category of userCategories" 
         [routerLink]="[ '/product/'+category.path ]" 
@@ -8,30 +14,33 @@
         class="btn-milk" (click)="closeNavSelect(category.name)">{{ category.name }}</a>
     </div>
   </nav>
+
   <section class="section cards">
     <div 
       *ngFor="let product of userProducts" 
-      class="card">
+      class="card"
+    >
       <div class="card__icons">
-        <button 
-          type="button" 
-          (click)="addToFavorite(product.id)">
+        <button  
+          (click)="addToFavorite(product.id)"
+        >
           <svg width="22" height="19" 
             class="card__heart" 
-            [ngClass]="{'card__favorite': isFavorite(product.id)}">
+            [ngClass]="{'card__favorite': isFavorite(product.id)}"
+          >
             <use href="../../../assets/images/icon_sprite_products.svg#heart"></use>
           </svg>
         </button>
         <div class="info">
           <button 
-            type="button" 
             class="info__btn">
-            <svg width="6" height="12" class="info__svg">
+            <svg width="6" height="12" class="info__svg"
+          >
               <use href="../../../assets/images/icon_sprite_products.svg#info"></use>
             </svg>
           </button>
           <div class="info__block">
-            <p class="info__text">
+            <p class="info__header">
               Основна страва
               <b>{{ product.calories }} ккал</b>
             </p>
@@ -66,7 +75,7 @@
         </div>
       </div>
       <div class="card__img-div">
-        <a [routerLink]="[ '/product/'+product.category.path, product.path ]">
+        <a [routerLink]="[ '/product/'+product.category.path, product.id ]">
           <img [src]="product.imagePath" [alt]="product.name" class="card__img">
         </a>
         <div class="card__order-div">
@@ -97,7 +106,8 @@
         </div>
         <button 
           class="btn-green" 
-          (click)="addToBasket(product)">Замовити</button>
+          (click)="addToBasket(product)"
+        >Замовити</button>
       </div>
     </div>
   </section>

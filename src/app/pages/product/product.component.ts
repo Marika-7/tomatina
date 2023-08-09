@@ -65,10 +65,6 @@ export class ProductComponent implements OnDestroy {
     this.activePage = page;
   }
 
-  isFavorite(id: string): boolean {
-    return this.userFavorites.includes(id) ? true : false;
-  }
-
   addToFavorite(id: string): void {
     const index = this.userFavorites.indexOf(id);
     if(index === -1) {
@@ -76,6 +72,10 @@ export class ProductComponent implements OnDestroy {
     } else {
       this.userFavorites.splice(index, 1);
     }
+  }
+
+  isFavorite(id: string): boolean {
+    return this.userFavorites.includes(id) ? true : false;
   }
 
   fastOrder(product: IProductResponse): void {

@@ -59,6 +59,12 @@ body {
   }
 }
 
+.container:has(.nav__select) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section {
   margin-bottom: 90px;
 
@@ -69,4 +75,15 @@ body {
   @include screen-768 {
     margin-bottom: 30px;
   }
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: $overlay;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }

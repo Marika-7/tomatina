@@ -93,7 +93,10 @@
 
 <div class="overlay" *ngIf="menuIsOpen">
   <div class="menu" [ngClass]="{'menu-active': menuIsOpen}">
-    <button class="menu__close" type="button" (click)="toggleBurgerMenu()">
+    <button 
+      class="menu__close" 
+      (click)="toggleBurgerMenu()"
+    >
       <svg class="menu__svg">
         <use href="../../../assets/images/icon_cross.svg#cross"></use>
       </svg>

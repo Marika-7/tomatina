@@ -1,4 +1,5 @@
 <div class="container">
+  
   <nav class="nav" [ngClass]="{'nav-open': navSelectIsOpen}">
     <button class="nav__select" type="button" (click)="toggleNavSelect()">{{ activePage }}</button>
     <div class="nav__wrapper">
@@ -10,7 +11,9 @@
         (click)="closeNavSelect('Замовлення')">Замовлення</a>
     </div>
   </nav>
+
   <div class="wrapper">
     <router-outlet></router-outlet>
   </div>
+
 </div>

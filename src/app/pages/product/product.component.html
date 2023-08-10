@@ -95,14 +95,21 @@
         <p class="paragraph">{{ product.description }}</p>
       </div>
       <div class="card__actions">
-        <div class="card__plus">
+        <div>
           <button 
             class="btn-milk btn-plus" 
-            (click)="changeCount(product, false)">-</button>
-          <input type="text" class="card__count" [value]="product.count" readonly>
+            (click)="changeCount(product, false)"
+          >-</button>
+          <input 
+            type="text" 
+            class="card__count" 
+            [value]="product.count" 
+            readonly
+          >
           <button 
             class="btn-milk btn-plus" 
-            (click)="changeCount(product, true)">+</button>
+            (click)="changeCount(product, true)"
+          >+</button>
         </div>
         <button 
           class="btn-green" 

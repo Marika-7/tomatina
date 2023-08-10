@@ -83,11 +83,18 @@
             <div>
               <button 
                 class="btn-milk btn-plus" 
-                (click)="changeCount(currentProduct, false)">-</button>
-              <input type="text" class="card__count" [value]="currentProduct.count" readonly>
+                (click)="changeCount(currentProduct, false)"
+              >-</button>
+              <input 
+                type="text" 
+                class="card__count" 
+                [value]="currentProduct.count" 
+                readonly
+              >
               <button 
                 class="btn-milk btn-plus" 
-                (click)="changeCount(currentProduct, true)">+</button>
+                (click)="changeCount(currentProduct, true)"
+              >+</button>
             </div>
             <p class="card__price">
               <b>{{ currentProduct.price }}</b>

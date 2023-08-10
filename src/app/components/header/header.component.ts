@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit {
     1280: false,
     768: false
   };
-  public changeDeliveryIsOpen = false; // true;
+  // public changeDeliveryIsOpen = false;
+  public changeDeliveryIsOpen = true;
   public navMenuIsOpen = false;
   public menuIsOpen = false;
   public signInIsOpen = false;
@@ -55,10 +56,6 @@ export class HeaderComponent implements OnInit {
     this.yourDelivery = delivery;
     this.changeDeliveryIsOpen = false;
   }
-
-  // openNavMenu(): void {
-  //   this.navMenuIsOpen = true;
-  // }
 
   toggleNavMenu(): void {
     this.navMenuIsOpen = !this.navMenuIsOpen;

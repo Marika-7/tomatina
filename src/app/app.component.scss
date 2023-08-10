@@ -4,11 +4,9 @@
 .main {
   min-height: 400px;
   padding-top: calc(52px + 105px);
-
   @include screen-1280 {
     padding-top: calc(52px + 80px);
   }
-
   @include screen-768 {
     padding-top: calc(72px + 60px);
   }

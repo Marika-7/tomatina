@@ -1,9 +1,9 @@
 task
-  header - favorite: remake button in link, create page
-  basket
       
 
 plan
+  header
+    favorite: remake button in link, create page
   product
     favorite add to LocalStorage
     fastOrder
@@ -12,8 +12,6 @@ plan
     admin-order
       table
       form
-later
-  remake admin nav-bar
 
 
 later
@@ -67,6 +65,7 @@ questions
     ng new tomatina
 
     ng g c components/header
+    ng g c components/basket
     ng g c components/footer
 
     ng g c pages/home
@@ -154,6 +153,7 @@ questions
   git commit -m "create admin-product"
   git commit -m "create product-category"
   git commit -m "create product pages"
+  git commit -m "create basket"
 
 -------------------- command --------------------
 
@@ -163,6 +163,8 @@ questions
   firebase deploy -m "first commit"
   firebase deploy -m "add static pages"
   firebase deploy -m "add admin pages"
+  firebase deploy -m "add product pages"
+  firebase deploy -m "add basket"
 
   Project Console: https://console.firebase.google.com/project/tomatina-3c277/overview
   Hosting URL: https://tomatina-3c277.web.app

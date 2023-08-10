@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProductResponse } from 'src/app/shared/interfaces/product/product.interface';
+import { OrderService } from 'src/app/shared/services/order/order.service';
 
 @Component({
   selector: 'app-product-info',
@@ -13,7 +14,8 @@ export class ProductInfoComponent implements OnInit {
   public userFavorites: string[] = [];
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private orderService: OrderService
   ) {}
 
   ngOnInit(): void {
@@ -45,7 +47,8 @@ export class ProductInfoComponent implements OnInit {
   }
 
   addToBasket(product: IProductResponse): void {
-    console.log('addToBasket');
+    this.orderService.addToBasket(product);
+    product.count = 1;
   }
 
   fastOrder(product: IProductResponse): void {

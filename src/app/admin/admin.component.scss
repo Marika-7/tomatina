@@ -3,9 +3,6 @@
 
 .container {
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   @include screen-1280 {
     padding: 60px 20px 0;

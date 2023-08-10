@@ -319,17 +319,6 @@
   }
 }
 
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  background-color: $overlay;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
-
 .menu {
   width: 380px;
   height: 100vh;

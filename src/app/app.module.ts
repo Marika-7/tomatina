@@ -9,13 +9,15 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { HomeComponent } from './pages/home/home.component';
 import { ProductModule } from "./pages/product/product.module";
+import { BasketComponent } from './components/basket/basket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

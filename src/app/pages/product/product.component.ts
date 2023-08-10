@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ICategoryResponse } from 'src/app/shared/interfaces/category/category.interface';
 import { IProductResponse } from 'src/app/shared/interfaces/product/product.interface';
 import { CategoryService } from 'src/app/shared/services/category/category.service';
+import { OrderService } from 'src/app/shared/services/order/order.service';
 import { ProductService } from 'src/app/shared/services/product/product.service';
 
 @Component({
@@ -24,7 +25,8 @@ export class ProductComponent implements OnDestroy {
     private activatedRoute: ActivatedRoute,
     private categoryService: CategoryService,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private orderService: OrderService
   ) { 
     this.eventSubscription = router.events
       .subscribe(event => {
@@ -38,13 +40,6 @@ export class ProductComponent implements OnDestroy {
     this.loadCategories();
   }
 
-  loadCategories(): void {
-    this.categoryService.getAll()
-      .subscribe(data => {
-        this.userCategories = data as ICategoryResponse[];
-      });
-  }
-
   loadProducts(): void {
     let categoryName = this.activatedRoute.snapshot.paramMap.get('category') as string;
     if (!categoryName) {
@@ -53,6 +48,14 @@ export class ProductComponent implements OnDestroy {
     this.productService.getAllByCategory(categoryName)
       .subscribe(data => {
         this.userProducts = data as IProductResponse[];
+        this.activePage = this.userProducts[0].category.name;
+      });
+  }
+
+  loadCategories(): void {
+    this.categoryService.getAll()
+      .subscribe(data => {
+        this.userCategories = data as ICategoryResponse[];
       });
   }
 
@@ -91,7 +94,8 @@ export class ProductComponent implements OnDestroy {
   }
 
   addToBasket(product: IProductResponse): void {
-    console.log('addToBasket');
+    this.orderService.addToBasket(product);
+    product.count = 1;
   }
 
   ngOnDestroy(): void {

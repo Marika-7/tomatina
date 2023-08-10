@@ -4,7 +4,7 @@
 	@include screen-1024 {
 		width: 100%;
 		position: relative;
-		z-index: 9;
+		z-index: 8;
 	}
 
 	&__wrapper {
@@ -69,6 +69,11 @@
 		background-color: $green;
 		color: $white;
 	}
+}
+
+.product .nav .btn-milk:nth-child(1) {
+	background-color: $green;
+	color: $white;
 }
 
 .nav-open {

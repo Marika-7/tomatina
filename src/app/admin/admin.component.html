@@ -1,4 +1,9 @@
 <div class="container">
+
+  <button class="btn-green" 
+    (click)="logout()">
+    Вихід
+  </button>
   
   <nav class="nav" [ngClass]="{'nav-open': navSelectIsOpen}">
     <button class="nav__select" type="button" (click)="toggleNavSelect()">{{ activePage }}</button>

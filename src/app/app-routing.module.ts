@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
+import { AuthGuard } from './shared/guards/auth/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,7 +23,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/product/product.module').then(n => n.ProductModule)
   },
   {
+    path: 'cabinet', 
+    // canLoad: [AuthGuard],
+    loadChildren: () => import('./pages/cabinet/cabinet.module').then(n => n.CabinetModule)
+  },
+  {
     path: 'admin', 
+    // canLoad: [AuthGuard],
     loadChildren: () => import('./admin/admin.module').then(n => n.AdminModule)
   }
 ];

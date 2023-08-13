@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AccountService } from '../shared/services/account/account.service';
 
 @Component({
   selector: 'app-admin',
@@ -9,6 +11,17 @@ export class AdminComponent {
 
   public navSelectIsOpen = false;
   public activePage = 'Замовлення';
+
+  constructor(
+    private router: Router,
+    private accountService: AccountService
+  ) {}
+
+  logout(): void {
+    this.router.navigate(['/']);
+    localStorage.removeItem('tomatina_currentUser');
+    this.accountService.isUserLogin$.next(true);
+  }
 
   toggleNavSelect(): void {
     this.navSelectIsOpen = !this.navSelectIsOpen;

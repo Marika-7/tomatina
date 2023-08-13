@@ -1,4 +1,6 @@
 task
+  cabinet
+  order
       
 
 plan
@@ -13,7 +15,6 @@ plan
       table
       form
 
-
 later
   header
     add overlay cdk
@@ -26,17 +27,21 @@ questions
   eng
   testing
 
+-------------------- authorization --------------------
+
+  admin@gmail.com - 123456
+  user1@gmail.com - 123456
+
 -------------------- app --------------------
 
     components/
       header
       footer
-  -   product-card
-  -   busket
-  -   auth-dialog
+      busket
+      auth-dialog
       pages/
     home
-  -   product
+      product
   -   zbery-sam
   -   favorite
       about
@@ -66,6 +71,7 @@ questions
 
     ng g c components/header
     ng g c components/basket
+    ng g c components/auth
     ng g c components/footer
 
     ng g c pages/home
@@ -80,6 +86,15 @@ questions
     ng g c pages/product
     ng g c pages/product/product-info
 
+  -  checkout
+
+    ng g m pages/cabinet
+    ng g c pages/cabinet
+    ng g c pages/cabinet/user-data
+    ng g c pages/cabinet/user-order
+    ng g c pages/cabinet/user-favorites
+    ng g c pages/cabinet/user-password
+
     ng g m admin
     ng g c admin
     ng g c admin/admin-category
@@ -90,7 +105,10 @@ questions
     ng g s shared/services/category/category
     ng g s shared/services/product/product
     ng g r shared/services/product/product-info
+    ng g s shared/services/account/account
     ng g s shared/services/order/order
+
+    ng g g shared/guards/auth/auth
 
 -------------------- files --------------------
 
@@ -108,7 +126,10 @@ questions
 
   shared/intefaces/category/category.interface.ts
   shared/intefaces/product/product.interface.ts
+  shared/intefaces/account/account.interface.ts
   shared/intefaces/order/order.interface.ts
+
+  shared/constants/role.constants.ts
 
   shared/sharedModule.ts
 
@@ -116,6 +137,7 @@ questions
   pages/about/about-routing.module.ts
   pages/contact/contact-routing.module.ts
   pages/product/product-routing.module.ts
+  pages/cabinet/cabinet-routing.module.ts
 
   admin/admin-routing.module.ts
 
@@ -126,7 +148,7 @@ questions
     npm i --force @angular/cdk
   npm install @angular/cdk@15.2.6
     npm install -g json-server
-    npm install ngx-toastr --save
+  npm install ngx-toastr --save
     npm install @angular/animations --save
     ng add @angular/material
   ng add @angular/fire

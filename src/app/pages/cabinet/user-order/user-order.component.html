@@ -1,0 +1,28 @@
+<table class="table">
+  <tr>
+    <th class="table__th">Номер</th>
+    <th class="table__th">Дата</th>
+    <th class="table__th">Доставка</th>
+    <th class="table__th">Сума</th>
+    <th class="table__th">Статус</th>
+  </tr>
+  <tr *ngFor="let order of userOrders">
+    <td class="table__td">{{ order.number }}</td>
+    <td class="table__td">{{ order.date }}</td>
+    <td class="table__td">{{ order.delivery }}</td>
+    <td class="table__td">{{ order.sum }}</td>
+    <td class="table__td">{{ order.status }}</td>
+    <!-- <td class="table__td">
+            <span class="table__action">
+                <button class="table__btn underline"
+                    (click)="editCategory(category)">
+                    Редагувати
+                </button>
+                <button class="table__btn underline"
+                    (click)="deleteCategory(category)">
+                    Видалити
+                </button>
+            </span>
+        </td> -->
+  </tr>
+</table>

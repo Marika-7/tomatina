@@ -1,9 +1,10 @@
+import { IUser } from "../account/account.interface";
 import { IProductResponse } from "../product/product.interface";
 
 export interface IOrderRequest {
   number: number;
   date: string;
-  user: string;
+  user: IUser;
   delivery: string;
   products: IProductResponse[];
   sum: number;

@@ -81,6 +81,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  animation: translateX .3s ease-in;
   @include screen-768 {
     width: 100%;
   }

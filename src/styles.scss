@@ -5,6 +5,7 @@
 @import 'src/app/shared/styles/text';
 @import 'src/app/shared/styles/nav-select';
 @import 'src/app/shared/styles/buttons';
+@import 'src/app/shared/styles/dialog';
 @import 'src/app/shared/styles/forms';
 @import 'src/app/shared/styles/table';
 
@@ -77,13 +78,16 @@ body {
   }
 }
 
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  background-color: $overlay;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
+.point {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  padding: 1px;
+  background-color: $green;
+  border-radius: 6px;
+  color: $white;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
 }

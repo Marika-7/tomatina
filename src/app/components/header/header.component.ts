@@ -16,12 +16,10 @@ export class HeaderComponent implements OnInit {
     1280: false,
     768: false
   };
-  // public changeDeliveryIsOpen = false;
-  public changeDeliveryIsOpen = true;
+  public changeDeliveryIsOpen = false;
+  // public changeDeliveryIsOpen = true;
   public navMenuIsOpen = false;
-  public menuIsOpen = false;
-  public signInIsOpen = false;
-  public signUpIsOpen = false;
+  public burgerMenuIsOpen = false;
 
   constructor(
     private categoryService: CategoryService,
@@ -57,6 +55,10 @@ export class HeaderComponent implements OnInit {
     this.changeDeliveryIsOpen = false;
   }
 
+  openNavMenu(): void {
+    this.navMenuIsOpen = true;
+  }
+
   toggleNavMenu(): void {
     this.navMenuIsOpen = !this.navMenuIsOpen;
   }
@@ -74,25 +76,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleBurgerMenu(): void {
-    this.menuIsOpen = !this.menuIsOpen;
-  }
-
-  openSignIn(): void {
-    this.signUpIsOpen = false;
-    this.signInIsOpen = true;
-  }
-
-  closeSignIn(): void {
-    this.signInIsOpen = false;
-  }
-
-  openSignUp(): void {
-    this.signUpIsOpen = true;
-    this.signInIsOpen = false;
-  }
-
-  closeSignUp(): void {
-    this.signUpIsOpen = false;
+    this.burgerMenuIsOpen = !this.burgerMenuIsOpen;
   }
 
 }

@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductModule } from "./pages/product/product.module";
 import { BasketComponent } from './components/basket/basket.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BasketComponent } from './components/basket/basket.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    BasketComponent
+    BasketComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

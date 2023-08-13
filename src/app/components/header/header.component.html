@@ -23,6 +23,8 @@
       <div 
         class="nav-h__wrapper" 
         [ngClass]="{'nav-h__open': navMenuIsOpen}"
+        (mouseover)="openNavMenu()"
+        (mouseout)="closeNavMenu()"
       >
         <button 
           class="btn-link" 
@@ -77,9 +79,7 @@
           </p>
         </div>
       </div>
-      <button class="btn-link" type="button" (click)="openSignIn()">
-        <img src="../../../assets/images/icon_user.svg" alt="Увійти" class="btn-link__img">
-        Вхід</button>
+      <app-auth></app-auth>
       <button type="button" (click)="toggleBurgerMenu()">
         <svg class="svg svg_hover">
           <use class="svg__bg" href="../../../assets/images/icon_sprite_main.svg#bg"></use>
@@ -91,8 +91,8 @@
   </header>
 </div>
 
-<div class="overlay" *ngIf="menuIsOpen">
-  <div class="menu" [ngClass]="{'menu-active': menuIsOpen}">
+<div class="overlay" *ngIf="burgerMenuIsOpen">
+  <div class="menu" [ngClass]="{'menu-active': burgerMenuIsOpen}">
     <button 
       class="menu__close" 
       (click)="toggleBurgerMenu()"
@@ -112,8 +112,11 @@
       <a [routerLink]="[ '/contact' ]" class="menu__link" (click)="toggleBurgerMenu()">
         Контакти
       </a>
+      <a [routerLink]="[ '/cabinet' ]" class="menu__link" (click)="toggleBurgerMenu()">
+        Кабінет
+      </a>
       <a [routerLink]="[ '/admin' ]" class="menu__link" (click)="toggleBurgerMenu()">
-        Admin
+        Адмін
       </a>
     </div>
   </div>
@@ -135,63 +138,6 @@
         <img src="../../../assets/images/dialog_delivery2.svg" class="delivery__img" alt="Самовивіз">
         <span class="delivery__span">Самовивіз</span>
       </button>
-    </div>
-  </div>
-</div>
-
-<div class="overlay" *ngIf="signInIsOpen">
-  <div class="dialog">
-    <button class="close" (click)="closeSignIn()">
-      <svg class="close__svg">
-        <use href="../../../assets/images/icon_cross.svg#cross"></use>
-      </svg>
-    </button>
-    <h3 class="dialog__title">Вхід в кабінет</h3>
-    <form class="form">
-      <input type="email" class="input" placeholder="*Ваш email">
-      <input type="password" class="input" placeholder="*Пароль">
-      <button class="btn-green">Увійти в кабінет</button>
-    </form>
-    <div class="dialog__row">
-      <button class="underline">Забули пароль?</button>
-      <button class="underline" (click)="openSignUp()">Зареєструватись</button>
-    </div>
-  </div>
-</div>
-
-<div class="overlay" *ngIf="signUpIsOpen">
-  <div class="dialog">
-    <button class="close" (click)="closeSignUp()">
-      <svg class="close__svg">
-        <use href="../../../assets/images/icon_cross.svg#cross"></use>
-      </svg>
-    </button>
-    <h3 class="dialog__title">Зареєструватися</h3>
-    <form class="form">
-      <div class="form__row">
-        <input type="text" class="input" placeholder="*Ваше ім'я">
-        <input type="text" class="input" placeholder="*Ваше прізвище">
-      </div>
-      <input type="tel" class="input" placeholder="*Ваш телефон" value="+380">
-      <input type="email" class="input" placeholder="*Ваш email">
-      <div class="form__row">
-        <input type="password" class="input" placeholder="*Пароль">
-        <input type="password" class="input" placeholder="*Повторіть пароль">
-      </div>
-      <label class="label">
-        <input type="checkbox" class="checkbox">
-        Хочу отримувати пропозиції на email
-      </label>
-      <label class="label">
-        <input type="checkbox" class="checkbox">
-        Я погоджуюсь з
-        <a href="#" class="underline">Правилами користування</a>
-      </label>
-      <button class="btn-green">Зареєструватись</button>
-    </form>
-    <div class="dialog__row2">
-      <span class="dialog__span">Вже зареєстровані? </span>
-      <button class="underline" (click)="openSignIn()">Увійти</button>
     </div>
   </div>
 </div>

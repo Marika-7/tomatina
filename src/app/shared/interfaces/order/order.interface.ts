@@ -2,8 +2,8 @@ import { IUser } from "../account/account.interface";
 import { IProductResponse } from "../product/product.interface";
 
 export interface IOrderRequest {
-  number: number;
   date: string;
+  userId: string;
   user: IUser;
   delivery: string;
   products: IProductResponse[];

@@ -21,10 +21,25 @@ export class UserOrderComponent implements OnInit {
 
   // load user orders
   loadOrders(): void {
-    this.orderService.getAll()
-      .subscribe(data => {
-        this.userOrders = data as IOrderResponse[];
-      })
+    const currentUser = JSON.parse(localStorage.getItem('tomatina_currentUser') as string);
+    if(currentUser) {
+      this.orderService.getAllByUser(currentUser.uid)
+        .subscribe(data => {
+          this.userOrders = data as IOrderResponse[];
+        })
+    }
+    // this.orderService.getAll()
+    //   .subscribe(data => {
+    //     this.userOrders = data as IOrderResponse[];
+    //   })
+  }
+
+  createDate(date: string): Date {
+    return new Date(date);
+  }
+
+  writeDelivery(delivery: string): string {
+    return delivery === 'self pickup' ? 'Самовивіз' : `Кур'єром`;
   }
 
 }

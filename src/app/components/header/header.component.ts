@@ -1,6 +1,7 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { ICategoryResponse } from 'src/app/shared/interfaces/category/category.interface';
+import { AccountService } from 'src/app/shared/services/account/account.service';
 import { CategoryService } from 'src/app/shared/services/category/category.service';
 
 @Component({
@@ -16,13 +17,14 @@ export class HeaderComponent implements OnInit {
     1280: false,
     768: false
   };
-  public changeDeliveryIsOpen = false;
-  // public changeDeliveryIsOpen = true;
+  // public changeDeliveryIsOpen = false;
+  public changeDeliveryIsOpen = true;
   public navMenuIsOpen = false;
   public burgerMenuIsOpen = false;
 
   constructor(
     private categoryService: CategoryService,
+    private accountService: AccountService,
     private breakpointObserver: BreakpointObserver
   ) { }
 
@@ -52,7 +54,10 @@ export class HeaderComponent implements OnInit {
 
   changeDelivery(delivery: string): void {
     this.yourDelivery = delivery;
+    localStorage.setItem('tomatina_delivery', JSON.stringify({delivery: delivery}));
+    this.accountService.changeDelivery$.next(true);
     this.changeDeliveryIsOpen = false;
+
   }
 
   openNavMenu(): void {

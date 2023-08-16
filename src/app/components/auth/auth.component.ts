@@ -68,9 +68,10 @@ export class AuthComponent implements OnInit {
   }
 
   checkUpdatedUserLogin(): void {
-    this.accountService.isUserLogin$.subscribe(() => {
-      this.checkUserLogin();
-    })
+    this.accountService.isUserLogin$
+      .subscribe(() => {
+        this.checkUserLogin();
+      });
   }
 
   initLoginForm(): void {

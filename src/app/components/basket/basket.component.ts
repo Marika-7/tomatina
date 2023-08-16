@@ -24,6 +24,7 @@ export class BasketComponent implements OnInit {
   }
 
   loadBasket(): void {
+    this.basket = [];
     if(localStorage.length > 0 && localStorage.getItem('tomatina_basket')) {
       this.basket = JSON.parse(localStorage.getItem('tomatina_basket') as string);
     }
@@ -75,10 +76,6 @@ export class BasketComponent implements OnInit {
     this.basket.splice(this.basket.indexOf(product), 1);
     localStorage.setItem('tomatina_basket', JSON.stringify(this.basket));
     this.orderService.changeBasket.next(true);
-  }
-
-  order(): void {
-    console.log('Order');
   }
 
 }

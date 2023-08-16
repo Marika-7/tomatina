@@ -11,7 +11,9 @@ import {
   deleteDoc, 
   doc, 
   docData, 
-  updateDoc 
+  query, 
+  updateDoc, 
+  where
 } from '@angular/fire/firestore';
 import { IProductResponse } from '../../interfaces/product/product.interface';
 import { IOrderRequest } from '../../interfaces/order/order.interface';
@@ -51,19 +53,29 @@ export class OrderService {
     return collectionData(this.orderCollection, { idField: 'id' });
   }
 
+  getAllByStatus(): Observable<DocumentData[]> {
+    const productCollectionByStatus = query(collection(this.afs, 'orders'), where('status', '==', 'Замовлено'));
+    return collectionData(productCollectionByStatus, { idField: 'id' });
+  } 
+
+  getAllByUser(userId: string): Observable<DocumentData[]> {
+    const productCollectionByStatus = query(collection(this.afs, 'orders'), where('userId', '==', userId));
+    return collectionData(productCollectionByStatus, { idField: 'id' });
+  } 
+
   // getOne(id: string): Observable<DocumentData> {
   //   const orderDocumentReference = doc(this.afs, `orders/${id}`);
   //   return docData(orderDocumentReference, { idField: 'id' });
   // }
 
-  // create(order: IOrderRequest): Promise<DocumentReference<DocumentData>> {
-  //   return addDoc(this.orderCollection, order);
-  // }
+  create(order: IOrderRequest): Promise<DocumentReference<DocumentData>> {
+    return addDoc(this.orderCollection, order);
+  }
 
-  // update(order: IOrderRequest, id: string): Promise<void> {
-  //   const orderDocumentReference = doc(this.afs, `orders/${id}`);
-  //   return updateDoc(orderDocumentReference, { ...order });
-  // }
+  update(order: IOrderRequest, id: string): Promise<void> {
+    const orderDocumentReference = doc(this.afs, `orders/${id}`);
+    return updateDoc(orderDocumentReference, { ...order });
+  }
 
   // delete(id: string): Promise<void> {
   //   const orderDocumentReference = doc(this.afs, `orders/${id}`);

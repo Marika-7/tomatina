@@ -17,6 +17,6 @@ export interface IUser {
   lastName: string;
   phoneNumber: string;
   email: string;
-  adress: string;
+  adress?: string;
   uid?: string;
 }

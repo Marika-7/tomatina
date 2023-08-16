@@ -1,28 +1,41 @@
 <table class="table">
-  <tr>
-    <th class="table__th">Номер</th>
-    <th class="table__th">Дата</th>
-    <th class="table__th">Доставка</th>
-    <th class="table__th">Сума</th>
-    <th class="table__th">Статус</th>
-  </tr>
-  <tr *ngFor="let order of userOrders">
-    <td class="table__td">{{ order.number }}</td>
-    <td class="table__td">{{ order.date }}</td>
-    <td class="table__td">{{ order.delivery }}</td>
-    <td class="table__td">{{ order.sum }}</td>
-    <td class="table__td">{{ order.status }}</td>
-    <!-- <td class="table__td">
-            <span class="table__action">
-                <button class="table__btn underline"
-                    (click)="editCategory(category)">
-                    Редагувати
-                </button>
-                <button class="table__btn underline"
-                    (click)="deleteCategory(category)">
-                    Видалити
-                </button>
-            </span>
-        </td> -->
-  </tr>
+  <thead>
+    <tr>
+      <th class="table__th">Дата</th>
+      <th class="table__th">Доставка</th>
+      <th class="table__th">Сума</th>
+      <th class="table__th">Статус</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let order of userOrders">
+      <td class="table__td">
+        {{ createDate(order.date) | date: 'dd.mm.yyyy, HH:mm' }}
+      </td>
+      <td class="table__td">{{ writeDelivery(order.delivery) }}</td>
+      <td class="table__td">{{ order.sum }}</td>
+      <td class="table__td">{{ order.status }}</td>
+    </tr> -->
+    <tr *ngFor="let order of userOrders">
+      <td colspan="4">
+        <table class="table">
+          <tbody>
+            <tr class="tr">
+              <th class="table__th">
+                {{ createDate(order.date) | date: 'dd.mm.yyyy, HH:mm' }}
+              </th>
+              <th class="table__th">{{ writeDelivery(order.delivery) }}</th>
+              <th class="table__th">{{ order.sum }}</th>
+              <th class="table__th">{{ order.status }}</th>
+            </tr>
+            <tr *ngFor="let product of order.products">
+              <td class="table__td" colspan="2">{{ product.name }}</td>
+              <td class="table__td">{{ product.count }}</td>
+              <td class="table__td">{{ product.price }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
 </table>

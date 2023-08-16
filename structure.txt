@@ -1,6 +1,7 @@
 task
-  cabinet
   order
+    check adress
+    check payment
       
 
 plan
@@ -10,10 +11,6 @@ plan
     favorite add to LocalStorage
     fastOrder
     id => path
-  admin
-    admin-order
-      table
-      form
 
 later
   header
@@ -85,8 +82,8 @@ questions
     ng g m pages/product
     ng g c pages/product
     ng g c pages/product/product-info
-
-  -  checkout
+    ng g m pages/checkout
+    ng g c pages/checkout
 
     ng g m pages/cabinet
     ng g c pages/cabinet
@@ -138,6 +135,7 @@ questions
   pages/contact/contact-routing.module.ts
   pages/product/product-routing.module.ts
   pages/cabinet/cabinet-routing.module.ts
+  pages/cabinet/checkout-routing.module.ts
 
   admin/admin-routing.module.ts
 
@@ -176,6 +174,8 @@ questions
   git commit -m "create product-category"
   git commit -m "create product pages"
   git commit -m "create basket"
+  git commit -m "add authorization & user cabinet"
+  git commit -m "add orders"
 
 -------------------- command --------------------
 
@@ -187,6 +187,8 @@ questions
   firebase deploy -m "add admin pages"
   firebase deploy -m "add product pages"
   firebase deploy -m "add basket"
+  firebase deploy -m "add authorization & user cabinet"
+  firebase deploy -m "add orders"
 
   Project Console: https://console.firebase.google.com/project/tomatina-3c277/overview
   Hosting URL: https://tomatina-3c277.web.app

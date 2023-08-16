@@ -1,2 +1,10 @@
-// @import 'src/app/shared/styles/variables';
-// @import 'src/app/shared/styles/mixins';
+@import 'src/app/shared/styles/variables';
+@import 'src/app/shared/styles/mixins';
+
+.table .table {
+  margin-bottom: 20px;
+}
+
+.tr .table__th {
+  border-bottom: 1px solid $green;
+}

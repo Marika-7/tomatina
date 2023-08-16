@@ -45,6 +45,8 @@ body {
 }
 
 .container {
+  margin-left: auto;
+  margin-right: auto;
   padding: 60px 80px 0;
 
   @include screen-1280 {
@@ -83,11 +85,15 @@ body {
   width: 28px;
   height: 28px;
   margin-right: 10px;
-  padding: 1px;
+  padding: 2px;
   background-color: $green;
   border-radius: 6px;
   color: $white;
   font-weight: 500;
   font-size: 15px;
   text-align: center;
+  @include screen-480 {
+    width: 24px;
+    height: 24px;
+  }
 }

@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/product/product.module').then(n => n.ProductModule)
   },
   {
+    path: 'checkout', 
+    loadChildren: () => import('./pages/checkout/checkout.module').then(n => n.CheckoutModule)
+  },
+  {
     path: 'cabinet', 
     // canLoad: [AuthGuard],
     loadChildren: () => import('./pages/cabinet/cabinet.module').then(n => n.CabinetModule)

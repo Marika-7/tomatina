@@ -94,12 +94,13 @@
         <span class="basket__sum">{{ totalPrice }}</span>
          грн
       </p>
-      <button 
-          class="btn-green" 
-          (click)="order()"
-        >
-          Оформити замовлення
-        </button>
+      <a 
+        class="btn-green" 
+        [routerLink]="[ '/checkout' ]" 
+        (click)="closeBasket()"
+      >
+        Оформити замовлення
+      </a>
     </footer>
   </div>
 </div>

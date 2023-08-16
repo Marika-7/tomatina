@@ -27,13 +27,17 @@ const routes: Routes = [
     loadChildren: () => import('./pages/checkout/checkout.module').then(n => n.CheckoutModule)
   },
   {
+    path: 'favorites', 
+    loadChildren: () => import('./pages/favorites/favorites.module').then(n => n.FavoritesModule)
+  },
+  {
     path: 'cabinet', 
-    // canLoad: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: () => import('./pages/cabinet/cabinet.module').then(n => n.CabinetModule)
   },
   {
     path: 'admin', 
-    // canLoad: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: () => import('./admin/admin.module').then(n => n.AdminModule)
   }
 ];

@@ -1,6 +1,7 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { ICategoryResponse } from 'src/app/shared/interfaces/category/category.interface';
+import { IProductResponse } from 'src/app/shared/interfaces/product/product.interface';
 import { AccountService } from 'src/app/shared/services/account/account.service';
 import { CategoryService } from 'src/app/shared/services/category/category.service';
 
@@ -31,6 +32,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.loadCategories();
     this.checkScreenSize();
+    this.accountService.initUserFavorites();
   }
 
   loadCategories(): void {
@@ -74,10 +76,6 @@ export class HeaderComponent implements OnInit {
 
   translateSite(): void {
     console.log('translateSite');
-  }
-
-  addToFavorite(): void {
-    console.log('addToFavorite');
   }
 
   toggleBurgerMenu(): void {

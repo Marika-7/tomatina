@@ -2,6 +2,10 @@
 @import 'src/app/shared/styles/mixins';
 
 .footer {
+  background-image: url('../../../assets/images/footer-bg1.webp'), url('../../../assets/images/footer-bg2.webp');
+  background-size: 33% auto;
+  background-repeat: no-repeat;
+  background-position: 0 100%, 100% 100%;
   padding: 30px 60px;
   display: grid;
   align-items: center;

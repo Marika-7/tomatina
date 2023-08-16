@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProductResponse } from 'src/app/shared/interfaces/product/product.interface';
+import { AccountService } from 'src/app/shared/services/account/account.service';
 import { OrderService } from 'src/app/shared/services/order/order.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class ProductInfoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private accountService: AccountService
   ) {}
 
   ngOnInit(): void {
@@ -25,17 +27,12 @@ export class ProductInfoComponent implements OnInit {
       });
   }
 
-  addToFavorite(id: string): void {
-    const index = this.userFavorites.indexOf(id);
-    if(index === -1) {
-      this.userFavorites.push(id);
-    } else {
-      this.userFavorites.splice(index, 1);
-    }
+  addToFavorite(product: IProductResponse): void {
+    this.accountService.setFavorite(product);
   }
 
   isFavorite(id: string): boolean {
-    return this.userFavorites.includes(id) ? true : false;
+    return this.accountService.userFavorites.some(prod => prod.id === id);
   }
 
   changeCount(product: IProductResponse, plus: boolean): void {

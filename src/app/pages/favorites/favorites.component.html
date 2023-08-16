@@ -1,23 +1,13 @@
 <div class="container">
 
-  <nav class="nav" [ngClass]="{'nav-open': navSelectIsOpen}">
-    <button 
-      class="nav__select"
-      (click)="toggleNavSelect()"
-    >
-      {{ activePage }}
-    </button>
-    <div class="nav__wrapper">
-      <a *ngFor="let category of userCategories" 
-        [routerLink]="[ '/product/'+category.path ]" 
-        routerLinkActive="active"
-        class="btn-milk" (click)="closeNavSelect(category.name)">{{ category.name }}</a>
-    </div>
-  </nav>
+  <h1 class="title1">
+    Улюблені 
+    <span class="green">страви</span>
+  </h1>
 
   <section class="section cards">
     <div 
-      *ngFor="let product of userProducts" 
+      *ngFor="let product of userFavorites" 
       class="card"
     >
       <div class="card__icons">
@@ -118,4 +108,5 @@
       </div>
     </div>
   </section>
+
 </div>

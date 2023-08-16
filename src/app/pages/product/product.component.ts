@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ICategoryResponse } from 'src/app/shared/interfaces/category/category.interface';
 import { IProductResponse } from 'src/app/shared/interfaces/product/product.interface';
+import { AccountService } from 'src/app/shared/services/account/account.service';
 import { CategoryService } from 'src/app/shared/services/category/category.service';
 import { OrderService } from 'src/app/shared/services/order/order.service';
 import { ProductService } from 'src/app/shared/services/product/product.service';
@@ -16,7 +17,6 @@ export class ProductComponent implements OnDestroy {
 
   public userCategories!: ICategoryResponse[];
   public userProducts!: IProductResponse[];
-  public userFavorites: string[] = [];
   public navSelectIsOpen = false;
   public activePage = 'Салати';
   public eventSubscription!: Subscription;
@@ -26,7 +26,8 @@ export class ProductComponent implements OnDestroy {
     private categoryService: CategoryService,
     private productService: ProductService,
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private accountService: AccountService
   ) { 
     this.eventSubscription = router.events
       .subscribe(event => {
@@ -68,17 +69,12 @@ export class ProductComponent implements OnDestroy {
     this.activePage = page;
   }
 
-  addToFavorite(id: string): void {
-    const index = this.userFavorites.indexOf(id);
-    if(index === -1) {
-      this.userFavorites.push(id);
-    } else {
-      this.userFavorites.splice(index, 1);
-    }
+  addToFavorite(product: IProductResponse): void {
+    this.accountService.setFavorite(product);
   }
 
   isFavorite(id: string): boolean {
-    return this.userFavorites.includes(id) ? true : false;
+    return this.accountService.userFavorites.some(prod => prod.id === id);
   }
 
   fastOrder(product: IProductResponse): void {

@@ -4,11 +4,11 @@ import { AccountService } from 'src/app/shared/services/account/account.service'
 import { OrderService } from 'src/app/shared/services/order/order.service';
 
 @Component({
-  selector: 'app-user-favorites',
-  templateUrl: './user-favorites.component.html',
-  styleUrls: ['./user-favorites.component.scss']
+  selector: 'app-favorites',
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.scss']
 })
-export class UserFavoritesComponent  implements OnInit {
+export class FavoritesComponent implements OnInit {
 
   public userFavorites!: Array<IProductResponse>;
 

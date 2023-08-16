@@ -13,7 +13,7 @@
         <div class="card__icons">
           <button 
             type="button" 
-            (click)="addToFavorite(currentProduct.id)">
+            (click)="addToFavorite(currentProduct)">
             <svg width="22" height="19" 
               class="card__heart" 
               [ngClass]="{'card__favorite': isFavorite(currentProduct.id)}">

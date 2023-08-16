@@ -8,14 +8,6 @@
     </tr>
   </thead>
   <tbody>
-    <!-- <tr *ngFor="let order of userOrders">
-      <td class="table__td">
-        {{ createDate(order.date) | date: 'dd.mm.yyyy, HH:mm' }}
-      </td>
-      <td class="table__td">{{ writeDelivery(order.delivery) }}</td>
-      <td class="table__td">{{ order.sum }}</td>
-      <td class="table__td">{{ order.status }}</td>
-    </tr> -->
     <tr *ngFor="let order of userOrders">
       <td colspan="4">
         <table class="table">
@@ -25,13 +17,15 @@
                 {{ createDate(order.date) | date: 'dd.mm.yyyy, HH:mm' }}
               </th>
               <th class="table__th">{{ writeDelivery(order.delivery) }}</th>
-              <th class="table__th">{{ order.sum }}</th>
+              <th class="table__th">
+                <b>{{ order.sum }}</b>
+              </th>
               <th class="table__th">{{ order.status }}</th>
             </tr>
             <tr *ngFor="let product of order.products">
               <td class="table__td" colspan="2">{{ product.name }}</td>
-              <td class="table__td">{{ product.count }}</td>
               <td class="table__td">{{ product.price }}</td>
+              <td class="table__td">{{ product.count }}</td>
             </tr>
           </tbody>
         </table>

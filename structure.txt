@@ -1,28 +1,3 @@
-task
-  order
-    check adress
-    check payment
-      
-
-plan
-  header
-    favorite: remake button in link, create page
-  product
-    favorite add to LocalStorage
-    fastOrder
-    id => path
-
-later
-  header
-    add overlay cdk
-    add navigation
-    add on-click
-  home
-    details: display-none or cdk
-
-questions
-  eng
-  testing
 
 -------------------- authorization --------------------
 
@@ -84,6 +59,8 @@ questions
     ng g c pages/product/product-info
     ng g m pages/checkout
     ng g c pages/checkout
+    ng g m pages/favorites
+    ng g c pages/favorites
 
     ng g m pages/cabinet
     ng g c pages/cabinet
@@ -136,6 +113,7 @@ questions
   pages/product/product-routing.module.ts
   pages/cabinet/cabinet-routing.module.ts
   pages/cabinet/checkout-routing.module.ts
+  pages/cabinet/favorites-routing.module.ts
 
   admin/admin-routing.module.ts
 
@@ -176,6 +154,7 @@ questions
   git commit -m "create basket"
   git commit -m "add authorization & user cabinet"
   git commit -m "add orders"
+  git commit -m "add favorites"
 
 -------------------- command --------------------
 
@@ -189,6 +168,7 @@ questions
   firebase deploy -m "add basket"
   firebase deploy -m "add authorization & user cabinet"
   firebase deploy -m "add orders"
+  firebase deploy -m "add favorites"
 
   Project Console: https://console.firebase.google.com/project/tomatina-3c277/overview
   Hosting URL: https://tomatina-3c277.web.app
@@ -222,3 +202,23 @@ questions
   гілки з хорошим неймінгом і зрозумілим комітом)
   7. Код повинен бути відформатований, чистий і структурний
   8. Все має працювати😀
+
+  task   
+
+later
+  order
+    check adress
+    check payment
+  product
+    fastOrder
+    id => path
+  header
+    add overlay cdk
+    add navigation
+    add on-click
+  home
+    details: display-none or cdk
+
+questions
+  eng
+  testing

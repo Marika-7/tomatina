@@ -1,17 +1,17 @@
 <button 
   *ngIf="totalCount"
-  class="info" 
+  class="info-b" 
   (click)="openBasket()"
 >
-  <svg class="info__bg">
+  <svg class="info-b__bg">
     <use href="../../../assets/images/basket_sprite.svg#bg"></use>
   </svg>
-  <div class="info__block">
-    <svg class="info__img">
+  <div class="info-b__block">
+    <svg class="info-b__img">
       <use href="../../../assets/images/basket_sprite.svg#basket"></use>
     </svg>
-    <span class="info__count">{{ totalCount }}</span>
-    <p class="info__sum">
+    <span class="info-b__count">{{ totalCount }}</span>
+    <p class="info-b__sum">
       <b>{{ totalPrice }}</b>
       <br>
        грн

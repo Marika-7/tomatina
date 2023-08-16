@@ -45,23 +45,24 @@
           </li>
         </ul>
       </div>
-      <a href="#" class="btn-link">Збери сам</a>
+      <!-- <a href="#" class="btn-link">Збери сам</a> -->
       <a [routerLink]="[ '/delivery' ]" class="btn-link">Доставка</a>
+      <a [routerLink]="[ '/about' ]" class="btn-link">Про Томатіну</a>
     </nav>
 
     <div class="block-right">
-      <button class="btn-link" type="button" (click)="translateSite()">
+      <!-- <button class="btn-link" type="button" (click)="translateSite()">
         ENG
-      </button>
-      <a href="#" class="btn-milk" *ngIf="screenSize[1280]">
+      </button> -->
+      <!-- <a href="#" class="btn-milk" *ngIf="screenSize[1280]">
         Залишити відгук
-      </a>
-      <button type="button" (click)="addToFavorite()">
+      </a> -->
+      <a [routerLink]="[ '/favorites' ]">
         <svg class="svg svg_hover">
           <use class="svg__bg" href="../../../assets/images/icon_sprite_main.svg#bg"></use>
           <use class="svg__img" href="../../../assets/images/icon_sprite_main.svg#heart"></use>
         </svg>
-      </button>
+      </a>
       <div class="phone" *ngIf="screenSize[768]">
         <button type="button">
           <svg class="svg">
@@ -105,19 +106,19 @@
       <a [routerLink]="[ '/about' ]" class="menu__link" (click)="toggleBurgerMenu()">
         Про Томатіну
       </a>
-      <a href="#" class="menu__link">Збери сам</a>
+      <!-- <a href="#" class="menu__link">Збери сам</a> -->
       <a [routerLink]="[ '/delivery' ]" class="menu__link" (click)="toggleBurgerMenu()">
         Доставка
       </a>
       <a [routerLink]="[ '/contact' ]" class="menu__link" (click)="toggleBurgerMenu()">
         Контакти
       </a>
-      <a [routerLink]="[ '/cabinet' ]" class="menu__link" (click)="toggleBurgerMenu()">
+      <!-- <a [routerLink]="[ '/cabinet' ]" class="menu__link" (click)="toggleBurgerMenu()">
         Кабінет
-      </a>
-      <a [routerLink]="[ '/admin' ]" class="menu__link" (click)="toggleBurgerMenu()">
+      </a> -->
+      <!-- <a [routerLink]="[ '/admin' ]" class="menu__link" (click)="toggleBurgerMenu()">
         Адмін
-      </a>
+      </a> -->
     </div>
   </div>
 </div>
